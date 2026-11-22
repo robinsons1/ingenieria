@@ -409,7 +409,56 @@
     selectMode(state.mode);
   }
 
+  /* ── 5. NAVBAR FLOTANTE (SCROLL STATE) & DROPDOWN ACCESIBLE ── */
+  function initFloatingNavbar() {
+    const navbar = document.getElementById('mainNavbar');
+    if (!navbar) return;
+
+    const onScroll = () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 24);
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  function initNavDropdown() {
+    const dropdown = document.querySelector('.nav-has-dropdown');
+    const trigger = dropdown?.querySelector('.nav-dropdown-trigger');
+    if (!dropdown || !trigger) return;
+
+    function setOpen(open) {
+      dropdown.classList.toggle('is-open', open);
+      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      setOpen(!dropdown.classList.contains('is-open'));
+    });
+
+    dropdown.querySelectorAll('.dropdown-link').forEach((link) => {
+      link.addEventListener('click', () => setOpen(false));
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!dropdown.contains(event.target)) {
+        setOpen(false);
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && dropdown.classList.contains('is-open')) {
+        setOpen(false);
+        trigger.focus();
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
+    initFloatingNavbar();
+    initNavDropdown();
     initMobileDrawer();
     initScrollReveal();
     initSpotlightCards();

@@ -20,6 +20,8 @@ Sitio web estático de alto rendimiento (**HTML5 + CSS3 + JavaScript vanilla**) 
     ├── llms.txt
     ├── llms-full.txt
     ├── assets/
+    │   ├── ingenieria_logo.svg
+    │   ├── ingenieria_simbolo.svg
     │   ├── ingversia_simbolo.svg
     │   ├── favicon.svg
     │   ├── favicon-48.png

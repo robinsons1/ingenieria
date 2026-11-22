@@ -47,13 +47,13 @@ font_footer = load_font(["segoeuib.ttf", "arialbd.ttf", "DejaVuSans-Bold.ttf"], 
 font_footer_s = load_font(["segoeui.ttf", "arial.ttf", "DejaVuSans.ttf"], 15)
 
 
-def draw_ingversia_logo(draw_ctx, x, y, size):
-    """Dibuja el símbolo oficial de Ingversia (3 módulos blancos + 1 módulo naranja #F5821F)."""
+def draw_ingenieria_logo(draw_ctx, x, y, size):
+    """Dibuja el símbolo oficial de Ingeniería (3 módulos claros + 1 módulo cian #06b6d4)."""
     draw_ctx.rounded_rectangle(
         (x, y, x + size, y + size),
         radius=int(size * 0.21),
-        fill="#0d1629",
-        outline="#263959",
+        fill="#0b1324",
+        outline="#1e3354",
         width=s(2),
     )
     pad = int(size * 0.15)
@@ -69,28 +69,28 @@ def draw_ingversia_logo(draw_ctx, x, y, size):
     draw_ctx.rounded_rectangle(
         (ix + sq + gap, iy + sq + gap, ix + 2 * sq + gap, iy + 2 * sq + gap),
         radius=r_piece,
-        fill="#F5821F",
+        fill="#06b6d4",
     )
 
 
 def draw_favicon_symbol(size_2x):
-    """Dibuja icono de división Ingeniería (3 módulos + módulo cian y naranja)."""
-    icon = Image.new("RGB", (size_2x, size_2x), "#0d1629")
+    """Dibuja icono cuadrado oficial de Ingeniería (3 módulos blancos + 1 cian técnico)."""
+    icon = Image.new("RGB", (size_2x, size_2x), "#0b1324")
     idraw = ImageDraw.Draw(icon)
 
-    pad = int(size_2x * 0.13)
+    pad = int(size_2x * 0.15)
     inner = size_2x - 2 * pad
     gap = int(size_2x * 0.065)
     sq = (inner - gap) // 2
     r_piece = int(size_2x * 0.08)
 
     idraw.rounded_rectangle((pad, pad, pad + sq, pad + sq), radius=r_piece, fill="#f8fafc")
-    idraw.rounded_rectangle((pad + sq + gap, pad, pad + 2 * sq + gap, pad + sq), radius=r_piece, fill="#06b6d4")
+    idraw.rounded_rectangle((pad + sq + gap, pad, pad + 2 * sq + gap, pad + sq), radius=r_piece, fill="#f8fafc")
     idraw.rounded_rectangle((pad, pad + sq + gap, pad + sq, pad + 2 * sq + gap), radius=r_piece, fill="#f8fafc")
     idraw.rounded_rectangle(
         (pad + sq + gap, pad + sq + gap, pad + 2 * sq + gap, pad + 2 * sq + gap),
         radius=r_piece,
-        fill="#F5821F",
+        fill="#06b6d4",
     )
     return icon
 
@@ -114,22 +114,18 @@ def wrap_text(draw_ctx, text, font, max_w):
 
 
 def generate_og_banner():
-    base = Image.new("RGB", (W, H), "#06080e")
+    base = Image.new("RGB", (W, H), "#05080f")
     glow_layer = Image.new("RGB", (W, H), (0, 0, 0))
     gd = ImageDraw.Draw(glow_layer)
 
-    # Resplandor cian técnico (arriba izquierda)
     gd.ellipse((s(-160), s(-180), s(560), s(440)), fill=(8, 125, 165))
-    # Resplandor azul profundo (centro)
     gd.ellipse((s(420), s(210), s(880), s(580)), fill=(22, 65, 130))
-    # Resplandor ámbar/naranja (abajo derecha)
-    gd.ellipse((s(780), s(240), s(1360), s(740)), fill=(140, 78, 14))
+    gd.ellipse((s(820), s(260), s(1360), s(740)), fill=(12, 74, 110))
 
     glow_layer = glow_layer.filter(ImageFilter.GaussianBlur(radius=s(130)))
     img = Image.blend(base, glow_layer, 0.5)
     draw = ImageDraw.Draw(img)
 
-    # Malla técnica de puntos
     for x in range(s(36), W, s(36)):
         for y in range(s(36), H, s(36)):
             r_dot = s(1)
@@ -137,7 +133,6 @@ def generate_og_banner():
 
     margin_x = s(64)
 
-    # Badge superior izquierdo
     badge_x, badge_y = margin_x, s(46)
     badge_w, badge_h = s(326), s(34)
     draw.rounded_rectangle(
@@ -158,7 +153,6 @@ def generate_og_banner():
         anchor="lm",
     )
 
-    # Tag ubicación derecha
     loc_txt = "BOGOTÁ D.C. · COLOMBIA"
     loc_w, loc_h = s(222), s(34)
     loc_x = W - margin_x - loc_w
@@ -171,16 +165,14 @@ def generate_og_banner():
     )
     draw.text((loc_x + loc_w // 2, badge_y + loc_h // 2), loc_txt, font=font_badge, fill="#94a3b8", anchor="mm")
 
-    # Bloque identidad principal
     logo_y = s(104)
     logo_size = s(86)
-    draw_ingversia_logo(draw, margin_x, logo_y, logo_size)
+    draw_ingenieria_logo(draw, margin_x, logo_y, logo_size)
 
     title_x = margin_x + logo_size + s(24)
     draw.text((title_x, logo_y - s(2)), "Ingeniería & Automatización", font=font_title, fill="#f8fafc")
     draw.text((title_x, logo_y + s(58)), "by Ingversia", font=font_endorse, fill="#f5821f")
 
-    # Subtítulo de servicios
     draw.text(
         (margin_x, s(216)),
         "Redes MikroTik Dual-WAN  ·  Electrónica PCB & RF  ·  Automatización PLC & NEXUS  ·  Manuales Técnicos",
@@ -188,12 +180,10 @@ def generate_og_banner():
         fill="#bae6fd",
     )
 
-    # Línea divisoria
     div_y = s(262)
     draw.rectangle((margin_x, div_y, W - margin_x, div_y + s(1.5)), fill="#1a263e")
     draw.rectangle((margin_x, div_y, margin_x + s(210), div_y + s(2)), fill="#06b6d4")
 
-    # 4 tarjetas de especialidades
     cards = [
         {
             "kicker": "01 · REDES & MIKROTIK",
@@ -266,7 +256,6 @@ def generate_og_banner():
         draw.text((cx + s(20), route_y), c["route"], font=font_mono, fill=c["accent"])
         draw.text((cx + card_w - s(32), route_y - s(2)), "→", font=font_card_d, fill=c["accent"])
 
-    # Footer
     footer_y = H - s(42)
     url_txt = "ingenieria.ingversia.com"
     draw.text((margin_x, footer_y), url_txt, font=font_footer, fill="#f8fafc", anchor="lm")

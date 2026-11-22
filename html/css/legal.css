@@ -1,11 +1,11 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   Ingeniería & Automatización by Ingversia — legal.css
+   Ingeniería & Automatización by Ingversia — legal.css v2.0
    Estilos para /privacidad/, /terminos/ y /404.html
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .legal-container {
-  padding-top: 40px;
-  padding-bottom: 64px;
+  padding-top: var(--nav-offset);
+  padding-bottom: 68px;
   display: flex;
   flex-direction: column;
   gap: 38px;
@@ -52,7 +52,7 @@
   background: var(--eng-cyan-dim);
   border: 1px solid var(--border-cyan);
   padding: 6px 13px;
-  border-radius: 999px;
+  border-radius: 9999px;
 }
 
 .policy-toc {
@@ -110,7 +110,7 @@
 }
 
 .policy-section {
-  scroll-margin-top: calc(var(--nav-height) + 18px);
+  scroll-margin-top: 98px;
   padding-bottom: 28px;
   border-bottom: 1px solid var(--border-subtle);
   display: flex;
@@ -261,17 +261,17 @@
 
 /* ── PÁGINA 404 ── */
 .notfound-section {
-  min-height: calc(100svh - var(--nav-height) - 80px);
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 0;
+  padding: var(--nav-offset) 0 48px;
 }
 
 .notfound-card {
   max-width: 680px;
   width: 100%;
-  padding: 42px 34px;
+  padding: 44px 34px;
   border-radius: var(--radius-xl);
   background: var(--bg-card);
   border: 1px solid var(--border-medium);

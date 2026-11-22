@@ -1,0 +1,9 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="6" fill="#0d1629"/>
+  <rect x="1" y="1" width="30" height="30" rx="5.5" fill="none" stroke="#1e3a5f" stroke-width="1.2"/>
+  <!-- Estructura modular Ingversia con énfasis técnico cian y módulo naranja -->
+  <rect x="4" y="4" width="11" height="11" rx="2.5" fill="#f8fafc"/>
+  <rect x="17" y="4" width="11" height="11" rx="2.5" fill="#06b6d4"/>
+  <rect x="4" y="17" width="11" height="11" rx="2.5" fill="#f8fafc"/>
+  <rect x="17" y="17" width="11" height="11" rx="2.5" fill="#F5821F"/>
+</svg>

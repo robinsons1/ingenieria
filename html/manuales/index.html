@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Manuales Técnicos, Levantamiento de Circuitos y Diagramas | Ingeniería by Ingversia</title>
+  <meta name="description" content="Levantamiento de circuitos, tableros y redes sin documentación (ingeniería inversa documentada), diagramas eléctricos/unifilares y manuales de operación, mantenimiento y solución de fallas en Colombia.">
+  <meta name="author" content="Ingeniería &amp; Automatización by Ingversia">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#06080e">
+  <meta name="geo.region" content="CO-DC">
+  <meta name="geo.placename" content="Bogotá">
+  <link rel="canonical" href="https://ingenieria.ingversia.com/manuales/">
+
+  <link rel="help" type="text/plain" href="/llms.txt" title="LLM Context">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ingenieria.ingversia.com/manuales/">
+  <meta property="og:site_name" content="Ingeniería &amp; Automatización by Ingversia">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:title" content="Manuales Técnicos, Levantamiento de Circuitos y Diagramas | by Ingversia">
+  <meta property="og:description" content="Elimina la dependencia de una sola persona. Levantamos tus tableros, máquinas o redes y entregamos diagramas limpios y manuales de operación y fallas.">
+  <meta property="og:image" content="https://ingenieria.ingversia.com/assets/og-banner.jpg?v=1">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Manuales Técnicos &amp; Levantamiento de Circuitos | Ingeniería by Ingversia">
+  <meta name="twitter:description" content="Ingeniería inversa documentada, planos eléctricos y de red, y manuales de operación y mantenimiento listos para auditoría.">
+  <meta name="twitter:image" content="https://ingenieria.ingversia.com/assets/og-banner.jpg?v=1">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://ingenieria.ingversia.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Manuales Técnicos", "item": "https://ingenieria.ingversia.com/manuales/" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Documentación Técnica, Levantamiento de Circuitos y Manuales de Operación",
+        "url": "https://ingenieria.ingversia.com/manuales/",
+        "provider": { "@type": "Organization", "name": "Ingversia", "url": "https://ingversia.com/" },
+        "areaServed": "Colombia",
+        "description": "Levantamiento en sitio o remoto de tableros, circuitos, máquinas y redes sin planos; diagramas eléctricos, unifilares y de arquitectura de red; manuales de operación, mantenimiento y troubleshooting."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Pueden documentar un tablero o máquina que no tiene ningún plano previo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Realizamos levantamiento físico cable a cable, identificación de protecciones, borneras, sensores, voltajes y secuencia operativa para reconstruir planos limpios y manuales útiles."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿En qué formatos entregan los manuales y diagramas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Entregamos el manual técnico maquetado en PDF A4 listo para imprimir o archivar en auditorías, junto con tablas de inventario/IPs/borneras y los diagramas fuente correspondientes."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
+
+  <link rel="stylesheet" href="/css/styles.css?v=1.0">
+</head>
+<body id="top">
+
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+  <div class="tech-grid-bg" aria-hidden="true"></div>
+  <div class="ambient ambient-1" aria-hidden="true"></div>
+  <div class="ambient ambient-2" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navegación principal">
+      <a href="/" class="brand-link" aria-label="Ingeniería &amp; Automatización by Ingversia — Inicio">
+        <img src="/assets/ingversia_simbolo.svg" alt="" class="brand-logo" width="36" height="36">
+        <div class="brand-text"><span class="brand-title">Ingeniería &amp; Automatización</span><span class="brand-endorse">by <strong>Ingversia</strong></span></div>
+      </a>
+
+      <div class="nav-links">
+        <a href="/redes-mikrotik/" class="nav-link">Redes MikroTik</a>
+        <a href="/electronica-pcb/" class="nav-link">Electrónica PCB</a>
+        <a href="/automatizacion-plc/" class="nav-link">Automatización PLC</a>
+        <a href="/manuales/" class="nav-link" aria-current="page">Manuales</a>
+        <a href="https://nexus.ingversia.com" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-demo">Demo NEXUS</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/573229637406?text=Hola%20Ingversia,%20necesito%20levantamiento%20t%C3%A9cnico%20o%20manuales%20de%20operaci%C3%B3n%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer" class="btn-nav-wa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.59 5.96L0 24l6.31-1.65a11.88 11.88 0 0 0 5.75 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.45-8.44zM12.07 21.81h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.87 9.87 0 0 1-1.52-5.28c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.45-4.44 9.9-9.89 9.9zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
+          <span>Cotizar Manuales</span>
+        </a>
+        <button type="button" class="nav-toggle" id="navMobileToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="toggle-bar"></span><span class="toggle-bar"></span><span class="toggle-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" aria-hidden="true" inert>
+    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+      <div class="mobile-drawer-header">
+        <div class="brand-link">
+          <img src="/assets/ingversia_simbolo.svg" alt="" width="30" height="30" class="brand-logo">
+          <div class="brand-text"><span class="brand-title">Ingeniería</span><span class="brand-endorse">by <strong>Ingversia</strong></span></div>
+        </div>
+        <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Cerrar menú">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="mobile-drawer-body">
+        <nav class="mobile-nav-menu" aria-label="Navegación móvil">
+          <a href="/" class="mobile-nav-link"><div class="mobile-link-text"><span class="mobile-link-title">Inicio de División</span><span class="mobile-link-sub">Portafolio general de ingeniería</span></div><span class="mobile-link-arrow">→</span></a>
+          <a href="/redes-mikrotik/" class="mobile-nav-link"><div class="mobile-link-text"><span class="mobile-link-title">Redes &amp; MikroTik</span><span class="mobile-link-sub">Failover Dual-WAN, VPN y servidores</span></div><span class="mobile-link-arrow">→</span></a>
+          <a href="/electronica-pcb/" class="mobile-nav-link"><div class="mobile-link-text"><span class="mobile-link-title">Electrónica, PCB &amp; RF</span><span class="mobile-link-sub">Esquemáticos, firmware y soldadura</span></div><span class="mobile-link-arrow">→</span></a>
+          <a href="/automatizacion-plc/" class="mobile-nav-link"><div class="mobile-link-text"><span class="mobile-link-title">Automatización &amp; PLC</span><span class="mobile-link-sub">Tableros, Modbus y demo NEXUS</span></div><span class="mobile-link-arrow">→</span></a>
+          <a href="/manuales/" class="mobile-nav-link" aria-current="page"><div class="mobile-link-text"><span class="mobile-link-title">Manuales Técnicos</span><span class="mobile-link-sub">Levantamiento inverso y diagramas</span></div><span class="mobile-link-arrow">→</span></a>
+        </nav>
+        <div class="mobile-drawer-footer">
+          <a href="https://wa.me/573229637406?text=Hola%20Ingversia,%20necesito%20levantamiento%20t%C3%A9cnico%20o%20manuales%20de%20operaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-mobile">
+            <span>Cotizar Documentación Técnica</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="contenido-principal" class="site-main">
+
+    <section class="subpage-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href="/">Inicio</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Manuales &amp; Levantamiento Técnico</span>
+        </nav>
+
+        <div class="subpage-grid">
+          <div>
+            <div class="hero-badge">
+              <span class="badge-pulse" aria-hidden="true"></span>
+              <span>Ingeniería Inversa Documentada · Continuidad Operativa</span>
+            </div>
+            <h1 class="subpage-title">
+              Elimina el riesgo de depender de <span class="text-gradient">una sola persona</span> para operar tu planta o red
+            </h1>
+            <p class="hero-subtitle">
+              Realizamos levantamiento técnico de tableros, circuitos, máquinas y redes sin planos previos para entregarte <strong>diagramas limpios, matrices de fallas y manuales listos para auditoría o capacitación</strong>.
+            </p>
+            <div class="hero-actions">
+              <a href="https://wa.me/573229637406?text=Hola%20Ingversia,%20necesitamos%20levantamiento%20y%20manual%20t%C3%A9cnico%20de%20nuestros%20equipos%20o%20redes." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                <span>Cotizar Levantamiento &amp; Manual</span>
+              </a>
+              <a href="#entregables" class="btn btn-secondary">Ver qué incluye ↓</a>
+            </div>
+          </div>
+
+          <aside class="subpage-metrics-card" aria-label="Valor operativo de documentar">
+            <h2>Impacto en tu Empresa</h2>
+            <ul class="metric-list">
+              <li><span>Continuidad</span><strong>Cero dependencia de “memoria oral”</strong></li>
+              <li><span>Velocidad ante fallas</span><strong>Matrices Síntoma → Causa → Solución</strong></li>
+              <li><span>Auditorías</span><strong>Planos eléctricos y topologías limpias</strong></li>
+              <li><span>Seguridad</span><strong>Rotulado de borneras, puertos e IPs</strong></li>
+              <li><span>Capacitación</span><strong>Guías claras para nuevos operarios</strong></li>
+              <li><span>Entrega</span><strong>PDF A4 + tablas y fuentes</strong></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal-on-scroll">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker section-kicker--amber">Servicios Documentales</span>
+          <h2 class="section-title">Tres líneas para poner orden técnico en tu infraestructura</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card spotlight-card">
+            <span class="service-kicker service-kicker--amber">01 · Levantamiento en Campo</span>
+            <h3 class="service-title">Ingeniería Inversa Documentada</h3>
+            <p class="service-desc">Levantamiento ordenado de tableros eléctricos, circuitos, máquinas importadas o racks de red instalados hace años sin planos vigentes.</p>
+            <ul class="service-list">
+              <li>Trazado físico de cables, borneras, relés, fuentes y protecciones</li>
+              <li>Inventario real de referencias de componentes y repuestos críticos</li>
+              <li>Detección temprana de empalmes riesgosos o puntos únicos de falla</li>
+            </ul>
+          </article>
+
+          <article class="service-card spotlight-card">
+            <span class="service-kicker">02 · Operación &amp; Mantenimiento</span>
+            <h3 class="service-title">Manuales de Operación, Instalación y Fallas</h3>
+            <p class="service-desc">Documentos pensados para usarse de verdad en planta o soporte: paso a paso de arranque, parada segura, mantenimiento preventivo y troubleshooting.</p>
+            <ul class="service-list">
+              <li>Procedimientos visuales de operación normal y emergencia</li>
+              <li>Tablas de solución rápida de fallas por síntoma real</li>
+              <li>Checklists de inspección periódica y rutinas de respaldo</li>
+            </ul>
+          </article>
+
+          <article class="service-card spotlight-card">
+            <span class="service-kicker">03 · Planos &amp; Topologías</span>
+            <h3 class="service-title">Diagramas Eléctricos, Electrónicos y de Red</h3>
+            <p class="service-desc">Planos unifilares, esquemas de control/potencia, esquemáticos electrónicos y topologías de red (VLANs, WAN, VPN) listos para auditoría o ingeniería.</p>
+            <ul class="service-list">
+              <li>Simbología limpia, numeración coherente de conductores e IPs</li>
+              <li>Mapas lógicos de puertos, reglas y dependencias de servicio</li>
+              <li>Archivos PDF de alta resolución más fuentes editables</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="entregables" class="section section-tight reveal-on-scroll">
+      <div class="container">
+        <div class="proof-panel">
+          <div class="proof-grid">
+            <div>
+              <span class="section-kicker">Estándar de Documentación</span>
+              <h2 class="section-title">Manuales diseñados para que cualquier técnico nuevo resuelva rápido</h2>
+              <p class="section-desc">
+                Documentamos nuestros propios servidores, contingencias y tableros con rigor versionado; aplicamos ese mismo estándar claro y verificable en tu empresa.
+              </p>
+              <ul class="verification-checklist">
+                <li class="check-item"><span class="check-icon">✓</span><span>Portada con control de versiones, responsables y fecha de vigencia.</span></li>
+                <li class="check-item"><span class="check-icon">✓</span><span>Inventario completo de hardware, borneras, puertos, IPs y servicios críticos.</span></li>
+                <li class="check-item"><span class="check-icon">✓</span><span>Matriz de Troubleshooting (<em>Síntoma → Causa probable → Verificación exacta</em>).</span></li>
+                <li class="check-item"><span class="check-icon">✓</span><span>Procedimiento paso a paso de recuperación y restauración ante fallas.</span></li>
+              </ul>
+            </div>
+
+            <div class="proof-terminal" aria-label="Ejemplo de matriz de diagnóstico de fallas incluida en un manual">
+              <div class="terminal-header">
+                <div class="terminal-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                <span>MANUAL_TECNICO_V1.0 // TROUBLESHOOTING</span>
+              </div>
+              <pre class="terminal-body"><span class="term-cmd">| SÍNTOMA              | CAUSA PROBABLE        | VERIFICACIÓN / ACCIÓN        |</span>
+|----------------------|-----------------------|------------------------------|
+| Tablero sin mando    | Paro emergencia / F2  | Medir 24VDC en bornera X1:4  |
+| Sensor 4-20mA en 0   | Lazo abierto / fusible| Revisar canal AI2 y borna +  |
+| Sin acceso sede B    | Túnel VPN caído WAN1  | Confirmar ruta WAN2 activa   |
+<span class="term-ok">| Historico detenido   | Disco lleno / servicio| Ejecutar checklist Sec. 4.2  |</span></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="diagnostico" class="section reveal-on-scroll">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker section-kicker--amber">Cotización de Documentación</span>
+          <h2 class="section-title">Cuéntanos qué equipo, tablero o red necesitas documentar</h2>
+        </div>
+
+        <div class="diagnostic-panel" id="diagnosticBuilder" data-default-service="manuales">
+          <div class="diagnostic-grid">
+            <div class="diag-controls">
+              <div class="diag-group">
+                <span class="diag-label">1. Frente de servicio</span>
+                <div class="diag-tabs" id="diagServiceTabs" role="tablist" aria-label="Frente de ingeniería">
+                  <button type="button" class="diag-tab" data-service="mikrotik" role="tab" aria-selected="false">Redes MikroTik</button>
+                  <button type="button" class="diag-tab" data-service="pcb" role="tab" aria-selected="false">Electrónica &amp; PCB</button>
+                  <button type="button" class="diag-tab" data-service="plc" role="tab" aria-selected="false">PLCs &amp; Telemetría</button>
+                  <button type="button" class="diag-tab is-active" data-service="manuales" role="tab" aria-selected="true">Manuales Técnicos</button>
+                </div>
+              </div>
+              <div class="diag-group"><span class="diag-label">2. Necesidad principal</span><div class="diag-chips" id="diagSymptomChips"></div></div>
+              <div class="diag-group">
+                <span class="diag-label">3. Modalidad</span>
+                <div class="diag-chips" id="diagModeChips">
+                  <button type="button" class="diag-chip is-active" data-mode="Diagnóstico técnico inicial" aria-pressed="true">Diagnóstico técnico inicial</button>
+                  <button type="button" class="diag-chip" data-mode="Implementación / proyecto llave en mano" aria-pressed="false">Proyecto llave en mano</button>
+                  <button type="button" class="diag-chip" data-mode="Rescate urgente (falla en operación)" aria-pressed="false">Rescate urgente</button>
+                  <button type="button" class="diag-chip" data-mode="Acompañamiento / monitoreo mensual" aria-pressed="false">Monitoreo mensual</button>
+                </div>
+              </div>
+              <div class="diag-inputs">
+                <div class="diag-field"><label for="diagCompany">Nombre / Empresa (opcional)</label><input type="text" id="diagCompany" class="diag-input" placeholder="Ej: Mónica Torres · Operaciones"></div>
+                <div class="diag-field"><label for="diagCity">Ciudad (opcional)</label><input type="text" id="diagCity" class="diag-input" placeholder="Ej: Bogotá presencial / Remoto"></div>
+              </div>
+              <div class="diag-field"><label for="diagNotes">Cantidad de tableros, máquinas o sedes a documentar (opcional)</label><textarea id="diagNotes" class="diag-textarea" placeholder=""></textarea></div>
+            </div>
+            <div class="diag-output">
+              <div class="diag-preview-box">
+                <div class="diag-preview-head"><span>RESUMEN_DOCUMENTACION.txt</span><span>+57 322 963 7406</span></div>
+                <pre class="diag-preview-text" id="diagPreviewText"></pre>
+              </div>
+              <div class="diag-actions">
+                <a id="diagWhatsappBtn" href="https://wa.me/573229637406" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"><span>Enviar resumen por WhatsApp</span></a>
+                <div class="diag-actions-secondary">
+                  <a id="diagEmailBtn" href="mailto:contacto@ingversia.com" class="btn btn-secondary btn-sm">Enviar por Correo</a>
+                  <button type="button" id="diagCopyBtn" class="btn btn-ghost btn-sm">Copiar resumen</button>
+                </div>
+                <div class="diag-copy-status" id="diagCopyStatus" aria-live="polite"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight reveal-on-scroll">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-kicker">Preguntas Frecuentes · Documentación</span>
+          <h2 class="section-title">Sobre levantamiento en sitio y entregables</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-question">¿El levantamiento de tableros requiere apagar la planta o detener la operación?</summary>
+            <div class="faq-answer">
+              En la mayoría de los casos hacemos primero inspección visual, registro fotográfico e identificación sin desconectar cargas, coordinando únicamente ventanas breves si se requiere validar señales o marcar conductores con seguridad.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">¿También documentan redes MikroTik o servidores que ya existen?</summary>
+            <div class="faq-answer">
+              Sí. Podemos hacer levantamiento de topologías de red, puertos, reglas de firewall, servicios en contenedores y procedimientos de recuperación ante desastres (DRP), incluso de forma remota mediante acceso de solo lectura o sesión acompañada.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="ecosystem-dock" aria-label="Ecosistema Ingversia">
+        <span class="dock-label">Ecosistema Ingversia</span>
+        <div class="dock-links">
+          <a href="https://ingversia.com" target="_blank" rel="noopener noreferrer" class="dock-chip">Ingversia (Matriz)</a>
+          <a href="https://ivia.ingversia.com" target="_blank" rel="noopener noreferrer" class="dock-chip">IVIA (Web &amp; Correo)</a>
+          <a href="https://3d.ingversia.com" target="_blank" rel="noopener noreferrer" class="dock-chip">BerdeX 3D</a>
+          <a href="https://nexus.ingversia.com" target="_blank" rel="noopener noreferrer" class="dock-chip">NEXUS (Demo IoT)</a>
+          <a href="/" class="dock-chip dock-chip--active">Ingeniería &amp; Automatización</a>
+        </div>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <div class="brand-link">
+            <img src="/assets/ingversia_simbolo.svg" alt="" width="32" height="32" class="brand-logo">
+            <div class="brand-text"><span class="brand-title">Ingeniería &amp; Automatización</span><span class="brand-endorse">by <strong>Ingversia</strong></span></div>
+          </div>
+          <p class="footer-brand-desc">Levantamiento técnico, ingeniería inversa documentada, diagramas eléctricos/red y manuales operativos en Bogotá D.C., Colombia.</p>
+          <div class="footer-badges"><span class="footer-pill">Cero cookies publicitarias</span><span class="footer-pill">RUT Resp. 49 · No IVA</span></div>
+        </div>
+        <div>
+          <h3 class="footer-heading">Especialidades</h3>
+          <ul class="footer-links">
+            <li><a href="/redes-mikrotik/">Redes MikroTik &amp; Failover</a></li>
+            <li><a href="/electronica-pcb/">Electrónica, PCB &amp; RF</a></li>
+            <li><a href="/automatizacion-plc/">Automatización &amp; PLCs</a></li>
+            <li><a href="/manuales/">Manuales &amp; Levantamiento</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Contacto Oficial</h3>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/573229637406" target="_blank" rel="noopener noreferrer">WhatsApp: +57 322 963 7406</a></li>
+            <li><a href="mailto:contacto@ingversia.com">contacto@ingversia.com</a></li>
+            <li><a href="mailto:robinson.segura@ingversia.com">robinson.segura@ingversia.com</a></li>
+            <li><a href="https://www.linkedin.com/company/ingversia/" target="_blank" rel="noopener noreferrer">LinkedIn Corporativo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Legal &amp; Seguridad</h3>
+          <ul class="footer-links">
+            <li><a href="/privacidad/">Política de Privacidad</a></li>
+            <li><a href="/terminos/">Términos y Condiciones</a></li>
+            <li><a href="https://ingversia.com/privacidad.html" target="_blank" rel="noopener noreferrer">Política General Ingversia</a></li>
+            <li><a href="mailto:seguridad@ingversia.com">seguridad@ingversia.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ingversia · División Ingeniería &amp; Automatización. Operado por Robinson Segura Aponte (Persona Natural · No Responsable de IVA).</p>
+        <p>Bogotá D.C., Colombia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js?v=1.0" defer></script>
+</body>
+</html>

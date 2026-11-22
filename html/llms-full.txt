@@ -1,0 +1,50 @@
+# Ingeniería & Automatización by Ingversia — Documentación Técnica Completa
+
+## 1. Identidad, Propósito y Marco Jurídico
+- **División:** Ingeniería & Automatización by Ingversia (`https://ingenieria.ingversia.com`).
+- **Marca matriz:** Ingversia (`https://ingversia.com`), Bogotá D.C., Colombia.
+- **Operador / Responsable:** Robinson Segura Aponte, Ingeniero Mecatrónico, persona natural titular de Registro Único Tributario (RUT) en calidad de **No Responsable del Impuesto sobre las Ventas (IVA — Responsabilidad 49)** conforme al artículo 437 del Estatuto Tributario de Colombia. No aplica cobro de IVA del 19 %; se entrega cuenta de cobro y copia de RUT para Documento Soporte electrónico DIAN.
+- **Canales oficiales:** WhatsApp `+57 322 963 7406`, correo comercial `contacto@ingversia.com`, Habeas Data `robinson.segura@ingversia.com`, divulgación de seguridad `seguridad@ingversia.com`, LinkedIn `https://www.linkedin.com/company/ingversia/`.
+- **Privacidad y cero rastreo:** El sitio opera sin cookies publicitarias ni rastreadores de terceros (`https://ingenieria.ingversia.com/privacidad/`), alineado con la Ley 1581 de 2012, Decreto 1377 de 2013 y la política general `https://ingversia.com/privacidad.html`.
+
+---
+
+## 2. Catálogo Detallado de Servicios
+
+### 2.1 Redes Empresariales, MikroTik, Failover Dual-WAN, VPN e Infraestructura Local (`/redes-mikrotik/`)
+- **Problema principal que resuelve:** Empresas que contrataron dos enlaces de internet pero quedan incomunicadas cuando cae el proveedor principal porque el failover quedó mal configurado (por ejemplo, `check-gateway=ping` contra el módem local o reglas que rompen sesiones POS/bancarias/VPN).
+- **Entregables y capacidades:**
+  - Failover Dual-WAN y Multi-WAN real mediante rutas recursivas (`scope`/`target-scope`) validando salida real hacia internet.
+  - Balanceo de carga PCC con listas de excepción para tráfico sensible (facturación electrónica, datáfonos POS, banca, VoIP y cámaras).
+  - VPN corporativas seguras entre sedes y para teletrabajo (`WireGuard`, `IPsec`, `L2TP`, redes mesh `Tailscale`).
+  - Segmentación por `VLANs` (invitados, administración, IoT/cámaras, servidores), QoS y endurecimiento (*hardening*) de RouterOS.
+  - Auditoría y rescate de configuraciones existentes realizadas por terceros.
+  - Infraestructura local segura para PYMEs: nodos Debian/Docker aislados de la LAN física, acceso Zero Trust y copias de seguridad 3-2-1 automatizadas.
+- **Garantía de cierre:** Prueba real de desconexión en sitio o remota verificando tiempo de conmutación, retorno limpio, continuidad de VPN y entrega de backups `.rsc` y `.backup`.
+
+### 2.2 Diseño de PCBs, Electrónica RF, Microcontroladores y Soldadura (`/electronica-pcb/`)
+- Diseño de esquemáticos y layout de PCBs (2 y múltiples capas) cuidando potencia, aislamiento galvánico, integridad de señal y reglas DFM. Entrega de Gerbers, archivos de taladro, BOM y Pick & Place.
+- Electrónica de Radiofrecuencia (RF), líneas de impedancia controlada y acoplamiento inalámbrico.
+- Programación de microcontroladores y firmware embebido confiable (`UART`, `RS-485/Modbus`, `SPI`, `I2C`, `CAN`, watchdog y recuperación ante fallas).
+- Armado de prototipos, pruebas de banco, soldadura fina SMD/THT y reparación electrónica especializada.
+- **Diferenciador del ecosistema:** Fabricación de gabinetes, tapas etiquetadas multicolor y soportes riel DIN mediante **BerdeX 3D** (`https://3d.ingversia.com`).
+
+### 2.3 Automatización Industrial, PLCs, Tableros & Telemetría (`/automatizacion-plc/`)
+- Programación e integración de PLCs industriales y tableros eléctricos/de control con protecciones y enclavamientos.
+- Integración de instrumentación y protocolos: `Modbus RTU/TCP`, `RS-485`, lazos `4–20 mA`, `0–10 V`, relés y contactores.
+- Sistemas de adquisición de datos local-first, tableros HMI/web y alertas automáticas sin licencias por asiento.
+- **Prueba visual real en producción — NEXUS (`https://nexus.ingversia.com`):** Entorno de demostración en vivo de telemetría IoT industrial, cómputo Edge Local-First, PostgreSQL local + respaldo cloud, bot Telegram bidireccional e informes PDF A4.
+
+### 2.4 Documentación Técnica, Levantamiento de Circuitos y Manuales (`/manuales/`)
+- Ingeniería inversa documentada: levantamiento físico de tableros, circuitos, máquinas y redes existentes sin planos previos.
+- Manuales de operación, instalación, mantenimiento preventivo y solución de fallas (*troubleshooting* con matrices Síntoma → Causa → Verificación).
+- Diagramas eléctricos, electrónicos, unifilares y de arquitectura de red limpios para auditorías, seguridad o capacitación de operarios.
+
+---
+
+## 3. Cobertura y Modalidades de Contratación
+- **Cobertura:** Atención presencial en **Bogotá D.C. y Sabana** (racks, tableros, soldadura y levantamiento) y atención **remota en toda Colombia** (MikroTik, VPN, diseño PCB, firmware y documentación).
+- **Modalidades:**
+  1. *Diagnóstico & Auditoría Técnica* (valor descontable cuando el cliente aprueba la implementación).
+  2. *Implementación o Rescate Llave en Mano* (alcance acotado + prueba en vivo + entrega documentada).
+  3. *Acompañamiento & Monitoreo Continuo* (supervisión de enlaces, alertas tempranas, backups y soporte prioritario).

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Archivos de contexto para LLMs y motores de IA
+# https://ingenieria.ingversia.com/llms.txt
+# https://ingenieria.ingversia.com/llms-full.txt
+
+Sitemap: https://ingenieria.ingversia.com/sitemap.xml

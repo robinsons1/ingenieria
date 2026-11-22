@@ -1,0 +1,9 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="196" height="196" rx="42" fill="#0d1629" stroke="#263959" stroke-width="4"/>
+  <!-- Módulos negocio -->
+  <rect x="30" y="30" width="64" height="64" rx="14" fill="#f8fafc"/>
+  <rect x="106" y="30" width="64" height="64" rx="14" fill="#f8fafc"/>
+  <rect x="30" y="106" width="64" height="64" rx="14" fill="#f8fafc"/>
+  <!-- Módulo tecnología -->
+  <rect x="106" y="106" width="64" height="64" rx="14" fill="#F5821F"/>
+</svg>

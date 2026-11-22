@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ══ SEO INSTITUCIONAL Y TÉCNICO ══ -->
+  <title>Ingeniería &amp; Automatización by Ingversia | Redes MikroTik, Electrónica PCB, PLCs y Manuales</title>
+  <meta name="description" content="División de Ingeniería Aplicada de Ingversia en Bogotá, Colombia. Failover Dual-WAN en MikroTik, VPN y servidores locales, diseño de PCBs y RF, automatización con PLCs (demo NEXUS) y manuales técnicos.">
+  <meta name="author" content="Ingeniería &amp; Automatización by Ingversia">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#06080e">
+  <meta name="geo.region" content="CO-DC">
+  <meta name="geo.placename" content="Bogotá">
+  <meta name="geo.position" content="4.7110;-74.0721">
+  <meta name="ICBM" content="4.7110, -74.0721">
+  <link rel="canonical" href="https://ingenieria.ingversia.com/">
+  <link rel="alternate" hreflang="es-CO" href="https://ingenieria.ingversia.com/">
+  <link rel="alternate" hreflang="es" href="https://ingenieria.ingversia.com/">
+  <link rel="alternate" hreflang="x-default" href="https://ingenieria.ingversia.com/">
+
+  <!-- ══ LLM & AI AGENTS INDEXING ══ -->
+  <link rel="help" type="text/plain" href="/llms.txt" title="LLM Context">
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full LLM Documentation">
+
+  <!-- ══ OPEN GRAPH ══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ingenieria.ingversia.com/">
+  <meta property="og:site_name" content="Ingeniería &amp; Automatización by Ingversia">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:title" content="Ingeniería &amp; Automatización by Ingversia | Redes MikroTik, PCBs, PLCs y Manuales">
+  <meta property="og:description" content="Soluciones mecatrónicas, redes MikroTik con failover real, electrónica PCB y RF, automatización industrial con PLCs (demo viva NEXUS) y levantamiento técnico documentado.">
+  <meta property="og:image" content="https://ingenieria.ingversia.com/assets/og-banner.jpg?v=1">
+  <meta property="og:image:secure_url" content="https://ingenieria.ingversia.com/assets/og-banner.jpg?v=1">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ingeniería &amp; Automatización by Ingversia — Redes MikroTik, Electrónica PCB, PLCs y Manuales Técnicos">
+
+  <!-- ══ TWITTER / X CARD ══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://ingenieria.ingversia.com/">
+  <meta name="twitter:title" content="Ingeniería &amp; Automatización by Ingversia | Soluciones Probadas en Operación">
+  <meta name="twitter:description" content="Redes MikroTik Dual-WAN real, diseño PCB y RF, automatización PLC con telemetría NEXUS y documentación técnica en Colombia.">
+  <meta name="twitter:image" content="https://ingenieria.ingversia.com/assets/og-banner.jpg?v=1">
+
+  <!-- ══ FAVICON & ICONOS ══ -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+  <!-- ══ SCHEMA.ORG (JSON-LD) ══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://ingenieria.ingversia.com/#website",
+        "url": "https://ingenieria.ingversia.com/",
+        "name": "Ingeniería & Automatización by Ingversia",
+        "inLanguage": "es-CO",
+        "publisher": { "@id": "https://ingversia.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ingversia.com/#organization",
+        "name": "Ingversia",
+        "url": "https://ingversia.com/",
+        "logo": "https://ingenieria.ingversia.com/assets/apple-touch-icon.png",
+        "founder": {
+          "@type": "Person",
+          "name": "Robinson Segura Aponte",
+          "jobTitle": "Ingeniero Mecatrónico"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bogotá",
+          "addressRegion": "Bogotá D.C.",
+          "addressCountry": "CO"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Colombia"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+57-322-963-7406",
+          "email": "contacto@ingversia.com",
+          "contactType": "technical support",
+          "areaServed": "CO",
+          "availableLanguage": ["Spanish"]
+        },
+        "sameAs": ["https://www.linkedin.com/company/ingversia/"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://ingenieria.ingversia.com/#service",
+        "name": "Ingeniería & Automatización by Ingversia",
+        "url": "https://ingenieria.ingversia.com/",
+        "image": "https://ingenieria.ingversia.com/assets/og-banner.jpg?v=1",
+        "provider": { "@id": "https://ingversia.com/#organization" },
+        "areaServed": ["Bogotá D.C.", "Colombia"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de Ingeniería Aplicada",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Redes Empresariales MikroTik, Failover Dual-WAN, VPN e Infraestructura Local",
+                "url": "https://ingenieria.ingversia.com/redes-mikrotik/"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Diseño de PCBs, Radiofrecuencia, Microcontroladores y Soldadura SMD/THT",
+                "url": "https://ingenieria.ingversia.com/electronica-pcb/"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Automatización Industrial, PLCs, Tableros de Control y Telemetría (Demo NEXUS)",
+                "url": "https://ingenieria.ingversia.com/automatizacion-plc/"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Manuales Técnicos, Levantamiento de Circuitos e Ingeniería Inversa Documentada",
+                "url": "https://ingenieria.ingversia.com/manuales/"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cómo validan que el failover Dual-WAN en MikroTik sí conmuta en producción?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Configuramos rutas recursivas verificando conectividad real hacia internet (no solo el estado eléctrico del puerto del módem) y cerramos cada entrega con una prueba real de desconexión en sitio o remota frente a tu equipo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Atienden únicamente en Bogotá o también de forma remota en Colombia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prestamos servicio presencial en Bogotá D.C. y Sabana para tableros, cableado, soldadura o levantamiento físico, y atención remota en toda Colombia para arquitectura MikroTik, VPN, firmware y documentación."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo se formaliza el pago y la contratación tributaria con empresas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El operador titular es Robinson Segura Aponte, persona natural con RUT en calidad de No Responsable de IVA (Responsabilidad 49, art. 437 E.T.), por lo que no se suma IVA del 19 %. Entregamos cuenta de cobro y copia del RUT para Documento Soporte DIAN, además de actas o NDA firmables digitalmente."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ══ TIPOGRAFÍA GOOGLE FONTS ══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
+
+  <!-- ══ ESTILOS ══ -->
+  <link rel="stylesheet" href="/css/styles.css?v=1.0">
+</head>
+<body id="top">
+
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+  <div class="tech-grid-bg" aria-hidden="true"></div>
+  <div class="ambient ambient-1" aria-hidden="true"></div>
+  <div class="ambient ambient-2" aria-hidden="true"></div>
+
+  <!-- ══ NAVBAR STICKY ══ -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navegación principal">
+      <a href="/" class="brand-link" aria-label="Ingeniería &amp; Automatización by Ingversia — Inicio">
+        <img src="/assets/ingversia_simbolo.svg" alt="" class="brand-logo" width="36" height="36">
+        <div class="brand-text">
+          <span class="brand-title">Ingeniería &amp; Automatización</span>
+          <span class="brand-endorse">by <strong>Ingversia</strong></span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="/redes-mikrotik/" class="nav-link">Redes MikroTik</a>
+        <a href="/electronica-pcb/" class="nav-link">Electrónica PCB</a>
+        <a href="/automatizacion-plc/" class="nav-link">Automatización PLC</a>
+        <a href="/manuales/" class="nav-link">Manuales</a>
+        <a href="https://nexus.ingversia.com" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-demo">Demo NEXUS</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/573229637406?text=Hola%20Ingversia,%20necesito%20cotizar%20un%20proyecto%20de%20ingenier%C3%ADa%20o%20soporte%20t%C3%A9cnico." target="_blank" rel="noopener noreferrer" class="btn-nav-wa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.59 5.96L0 24l6.31-1.65a11.88 11.88 0 0 0 5.75 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.45-8.44zM12.07 21.81h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.87 9.87 0 0 1-1.52-5.28c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.45-4.44 9.9-9.89 9.9zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
+          <span>Cotizar por WhatsApp</span>
+        </a>
+        <button type="button" class="nav-toggle" id="navMobileToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ══ DRAWER MÓVIL ACCESIBLE ══ -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" aria-hidden="true" inert>
+    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+      <div class="mobile-drawer-header">
+        <div class="brand-link">
+          <img src="/assets/ingversia_simbolo.svg" alt="" width="30" height="30" class="brand-logo">
+          <div class="brand-text">
+            <span class="brand-title">Ingeniería</span>
+            <span class="brand-endorse">by <strong>Ingversia</strong></span>
+          </div>
+        </div>
+        <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Cerrar menú">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="mobile-drawer-body">
+        <nav class="mobile-nav-menu" aria-label="Navegación móvil">
+          <a href="/" class="mobile-nav-link" aria-current="page">
+            <div class="mobile-link-text">
+              <span class="mobile-link-title">Inicio de División</span>
+              <span class="mobile-link-sub">Portafolio de los 4 frentes de ingeniería</span>
+            </div>
+            <span class="mobile-link-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="/redes-mikrotik/" class="mobile-nav-link">
+            <div class="mobile-link-text">
+              <span class="mobile-link-title">Redes &amp; MikroTik</span>
+              <span class="mobile-link-sub">Failover Dual-WAN real, VPN y servidores</span>
+            </div>
+            <span class="mobile-link-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="/electronica-pcb/" class="mobile-nav-link">
+            <div class="mobile-link-text">
+              <span class="mobile-link-title">Electrónica, PCB &amp; RF</span>
+              <span class="mobile-link-sub">Diseño, firmware, soldadura SMD y 3D</span>
+            </div>
+            <span class="mobile-link-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="/automatizacion-plc/" class="mobile-nav-link">
+            <div class="mobile-link-text">
+              <span class="mobile-link-title">Automatización &amp; PLC</span>
+              <span class="mobile-link-sub">Tableros, Modbus y demo en vivo NEXUS</span>
+            </div>
+            <span class="mobile-link-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="/manuales/" class="mobile-nav-link">
+            <div class="mobile-link-text">
+              <span class="mobile-link-title">Manuales &amp; Levantamiento</span>
+              <span class="mobile-link-sub">Circuitos, planos limpios y guías de falla</span>
+            </div>
+            <span class="mobile-link-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="https://nexus.ingversia.com" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+            <div class="mobile-link-text">
+              <span class="mobile-link-title">Demo en Vivo NEXUS</span>
+              <span class="mobile-link-sub">Telemetría IoT y Edge Local-First</span>
+            </div>
+            <span class="mobile-link-arrow" aria-hidden="true">↗</span>
+          </a>
+        </nav>
+
+        <div class="mobile-drawer-footer">
+          <a href="https://wa.me/573229637406?text=Hola%20Ingversia,%20necesito%20diagnosticar%20un%20proyecto%20de%20ingenier%C3%ADa." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-mobile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.59 5.96L0 24l6.31-1.65a11.88 11.88 0 0 0 5.75 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.45-8.44zM12.07 21.81h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.87 9.87 0 0 1-1.52-5.28c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.45-4.44 9.9-9.89 9.9zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
+            <span>Diagnosticar por WhatsApp</span>
+          </a>
+          <a href="mailto:contacto@ingversia.com" class="btn btn-secondary btn-sm">contacto@ingversia.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="contenido-principal" class="site-main">
+
+    <!-- ══ HERO PRINCIPAL ══ -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="hero-badge">
+              <span class="badge-pulse" aria-hidden="true"></span>
+              <span>Ingeniería Mecatrónica Aplicada · Bogotá &amp; Remoto en Colombia</span>
+            </div>
+
+            <h1 class="hero-title">
+              Ingeniería Mecatrónica, <span class="text-gradient">Redes MikroTik</span>, Electrónica PCB y Automatización Industrial
+            </h1>
+
+            <p class="hero-subtitle">
+              Resolvemos fallas críticas que otros dejan incompletas y construimos sistemas confiables desde el hardware y las redes hasta la automatización y su documentación técnica, con <strong>pruebas reales en operación</strong> antes de cerrar cada entrega.
+            </p>
+
+            <div class="hero-actions">
+              <a href="https://wa.me/573229637406?text=Hola%20Ingversia,%20quiero%20diagnosticar%20un%20proyecto%20o%20falla%20t%C3%A9cnica%20con%20su%20equipo." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.59 5.96L0 24l6.31-1.65a11.88 11.88 0 0 0 5.75 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.45-8.44zM12.07 21.81h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.87 9.87 0 0 1-1.52-5.28c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.45-4.44 9.9-9.89 9.9zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
+                <span>Diagnosticar Proyecto por WhatsApp</span>
+              </a>
+              <a href="#especialidades" class="btn btn-secondary">
+                <span>Explorar Especialidades</span>
+                <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+
+            <div class="hero-trust-row">
+              <div class="trust-chip">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Prueba real de desconexión / banco</span>
+              </div>
+              <div class="trust-chip">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h6M7 16h8"/></svg>
+                <span>Entrega con planos y manual operativo</span>
+              </div>
+              <div class="trust-chip">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+                <span>Hardware + Firmware + Carcasa 3D + Demo NEXUS</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="telemetry-board" aria-label="Resumen técnico de los 4 frentes de servicio">
+            <div class="board-header">
+              <div class="board-title">
+                <span>SYS_FRONTS // INGVERSIA_ENG</span>
+              </div>
+              <span class="board-status">Operación Verificada</span>
+            </div>
+
+            <div class="board-body">
+              <a href="/redes-mikrotik/" class="board-row">
+                <span class="board-code">01 · NET</span>
+                <div class="board-info">
+                  <strong>Redes MikroTik &amp; Failover Dual-WAN</strong>
+                  <span>Conmutación recursiva real, PCC, WireGuard, VLANs y servidores seguros</span>
+                </div>
+                <span class="board-metric">Prueba en vivo →</span>
+              </a>
+
+              <a href="/electronica-pcb/" class="board-row">
+                <span class="board-code board-code--amber">02 · HW</span>
+                <div class="board-info">
+                  <strong>Electrónica PCB, RF &amp; Firmware</strong>
+                  <span>Esquemáticos, layout multicapa, soldadura SMD/THT + carcasa BerdeX 3D</span>
+                </div>
+                <span class="board-metric">Banco SMD →</span>
+              </a>
+
+              <a href="/automatizacion-plc/" class="board-row">
+                <span class="board-code">03 · PLC</span>
+                <div class="board-info">
+                  <strong>Automatización Industrial &amp; Telemetría</strong>
+                  <span>PLCs, tableros, Modbus/4-20 mA, alertas y respaldo con demo NEXUS</span>
+                </div>
+                <span class="board-metric">Edge + HMI →</span>
+              </a>
+
+              <a href="/manuales/" class="board-row">
+                <span class="board-code board-code--amber">04 · DOC</span>
+                <div class="board-info">
+                  <strong>Manuales &amp; Levantamiento Técnico</strong>
+                  <span>Ingeniería inversa documentada, diagramas eléctricos y guías de falla</span>
+                </div>
+                <span class="board-metric">Auditoría →</span>
+              </a>
+            </div>
+
+            <div class="board-footer">
+              <span>Respaldo real en producción:</span>
+              <a href="https://nexus.ingversia.com" target="_blank" rel="noopener noreferrer">Explorar Demo NEXUS ↗</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CATÁLOGO DE 4 FRENTES DE INGENIERÍA ══ -->
+    <section id="especialidades" class="section reveal-on-scroll">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Portafolio Especializado</span>
+          <h2 class="section-title">Cuatro frentes de ingeniería diseñados para resolver problemas reales</h2>
+          <p class="section-desc">
+            No vendemos configuraciones genéricas ni entregables a medias. Cada línea responde a un dolor operativo concreto de empresas, comercios, plantas y proyectos de desarrollo tecnológico.
+          </p>
+        </div>
+
+        <div class="fronts-grid">
+          <!-- Frente 1: Redes & MikroTik -->
+          <article class="front-card front-card--featured spotlight-card">
+            <div class="front-top">
+              <div class="front-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 14V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v7"/><circle cx="6.5" cy="17.5" r="1"/><circle cx="10.5" cy="17.5" r="1"/><path d="M16 17.5h2"/></svg>
+              </div>
+              <span class="front-tag front-tag--priority">Prioridad #1 · Rescate y Alta Disponibilidad</span>
+            </div>
+
+            <h3 class="front-title">Redes Empresariales, MikroTik, Failover Dual-WAN &amp; VPN</h3>
+            <p class="front-pain">
+              <strong>Dolor que resuelve:</strong> empresas que pagan dos proveedores de internet y se quedan sin facturación, POS o VPN cuando falla el enlace principal porque el failover solo revisaba el cable al módem.
+            </p>
+
+            <ul class="front-deliverables">
+              <li>Failover Dual-WAN / Multi-WAN real con rutas recursivas y tiempos medidos</li>
+              <li>Balanceo PCC, QoS, VLANs por área y endurecimiento de RouterOS</li>
+              <li>VPN corporativas (WireGuard / IPsec / L2TP) y rescate de redes mal configuradas</li>
+              <li>Servidores locales seguros (Debian / Docker / Zero Trust) y respaldos 3-2-1</li>
+            </ul>
+
+            <div class="front-chips">
+              <span class="tech-chip">RouterOS</span>
+              <span class="tech-chip">Failover Recursivo</span>
+              <span class="tech-chip">WireGuard / IPsec</span>
+              <span class="tech-chip">VLANs + Hardening</span>
+            </div>
+
+            <div class="front-footer">
+              <span class="front-route">/redes-mikrotik/</span>
+              <a href="/redes-mikrotik/" class="btn btn-primary btn-sm">Ver soluciones MikroTik →</a>
+            </div>
+          </article>
+
+          <!-- Frente 2: Electrónica & PCB -->
+          <article class="front-card spotlight-card">
+            <div class="front-top">
+              <div class="front-icon front-icon--amber" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v5M15 1v5M9 18v5M15 18v5M1 9h5M1 15h5M18 9h5M18 15h5"/></svg>
+              </div>
+              <span class="front-tag">Hardware · Firmware · Manufactura</span>
+            </div>
+
+            <h3 class="front-title">Diseño de PCBs, Radiofrecuencia, Microcontroladores y Soldadura</h3>
+            <p class="front-pain">
+              <strong>Dolor que resuelve:</strong> prototipos inestables en protoboard o tarjetas dañadas que frenan la operación por falta de diseño profesional de potencia, señal o manufactura SMD.
+            </p>
+
+            <ul class="front-deliverables">
+              <li>Esquemáticos, layout PCB multicapa, aislamiento y paquetes Gerbers + BOM</li>
+              <li>Electrónica de Radiofrecuencia (RF) y acoplamiento inalámbrico</li>
+              <li>Firmware embebido confiable para sensores, actuadores y buses industriales</li>
+              <li>Armado de banco, soldadura SMD/THT de precisión y carcasas 3D con BerdeX 3D</li>
+            </ul>
+
+            <div class="front-chips">
+              <span class="tech-chip">PCB Multicapa</span>
+              <span class="tech-chip">RF / Antenas</span>
+              <span class="tech-chip">ESP32 / STM32 / AVR</span>
+              <span class="tech-chip">Soldadura SMD/THT</span>
+            </div>
+
+            <div class="front-footer">
+              <span class="front-route">/electronica-pcb/</span>
+              <a href="/electronica-pcb/" class="btn btn-secondary btn-sm">Ver Electrónica &amp; PCB →</a>
+            </div>
+          </article>
+
+          <!-- Frente 3: Automatización & PLC -->
+          <article class="front-card spotlight-card">
+            <div class="front-top">
+              <div class="front-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/><rect x="2" y="2" width="20" height="20" rx="3" stroke-opacity="0.35"/></svg>
+              </div>
+              <span class="front-tag">Control Industrial · Demo NEXUS</span>
+            </div>
+
+            <h3 class="front-title">Automatización Industrial, PLCs, Tableros &amp; Telemetría</h3>
+            <p class="front-pain">
+              <strong>Dolor que resuelve:</strong> procesos manuales sin trazabilidad, tableros sin alarmas oportunas o instrumentación aislada cuyos datos nunca llegan a quienes toman decisiones.
+            </p>
+
+            <ul class="front-deliverables">
+              <li>Programación e integración de PLCs y tableros eléctricos de control</li>
+              <li>Instrumentación industrial: Modbus RTU/TCP, RS-485, 4–20 mA y 0–10 V</li>
+              <li>Adquisición de datos local-first, tableros HMI/web y alertas automáticas</li>
+              <li>Respaldo tangible con nuestro entorno real en producción: NEXUS</li>
+            </ul>
+
+            <div class="front-chips">
+              <span class="tech-chip">PLCs &amp; Tableros</span>
+              <span class="tech-chip">Modbus / RS-485</span>
+              <span class="tech-chip">4–20 mA / Relés</span>
+              <span class="tech-chip">Demo NEXUS</span>
+            </div>
+
+            <div class="front-footer">
+              <span class="front-route">/automatizacion-plc/</span>
+              <a href="/automatizacion-plc/" class="btn btn-secondary btn-sm">Ver Automatización &amp; PLC →</a>
+            </div>
+          </article>
+
+          <!-- Frente 4: Manuales Técnicos -->
+          <article class="front-card spotlight-card">
+            <div class="front-top">
+              <div class="front-icon front-icon--amber" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <span class="front-tag">Auditoría · Continuidad Operativa</span>
+            </div>
+
+            <h3 class="front-title">Documentación Técnica, Levantamiento de Circuitos y Manuales</h3>
+            <p class="front-pain">
+              <strong>Dolor que resuelve:</strong> depender de “la única persona que sabe cómo funciona la máquina, el tablero o la red”, quedando paralizados en cada falla o auditoría.
+            </p>
+
+            <ul class="front-deliverables">
+              <li>Ingeniería inversa documentada de tableros, máquinas y redes existentes</li>
+              <li>Manuales de operación, instalación, mantenimiento y diagnóstico de fallas</li>
+              <li>Diagramas eléctricos, electrónicos, unifilares y topologías de red limpias</li>
+              <li>Tablas de borneras, IPs, puertos, respaldos y listas de repuestos críticos</li>
+            </ul>
+
+            <div class="front-chips">
+              <span class="tech-chip">Levantamiento Inverso</span>
+              <span class="tech-chip">Unifilares &amp; Planos</span>
+              <span class="tech-chip">Troubleshooting</span>
+              <span class="tech-chip">Manual PDF A4</span>
+            </div>
+
+            <div class="front-footer">
+              <span class="front-route">/manuales/</span>
+              <a href="/manuales/" class="btn btn-secondary btn-sm">Ver Manuales Técnicos →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ MODALIDADES DE CONTRATACIÓN Y TRANSPARENCIA TRIBUTARIA ══ -->
+    <section id="modalidades" class="section section-tight reveal-on-scroll">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker section-kicker--amber">Modalidades de Servicio</span>
+          <h2 class="section-title">Formas claras de contratar, sin alcances ambiguos</h2>
+          <p class="section-desc">
+            Ya sea una emergencia de red que necesita rescate hoy o un desarrollo electrónico desde cero, trabajamos con alcance acotado, entregables verificables y reglas claras antes de intervenir.
+          </p>
+        </div>
+
+        <div class="packages-grid">
+          <article class="package-card spotlight-card">
+            <span class="package-badge">01 · Entrada Rápida</span>
+            <h3 class="package-name">Diagnóstico &amp; Auditoría Técnica</h3>
+            <p class="package-ideal">Ideal cuando una red MikroTik, tablero o circuito ya existe pero falla o nadie sabe cómo quedó configurado.</p>
+            <ul class="package-list">
+              <li>Revisión física o remota de estado actual y puntos críticos</li>
+              <li>Informe de hallazgos, riesgos y plan de corrección paso a paso</li>
+              <li><strong>Valor descontable</strong> del proyecto si apruebas la implementación con nosotros</li>
+            </ul>
+            <div class="package-cta">
+              <a href="#diagnostico" class="btn btn-secondary btn-sm" data-select-mode="Diagnóstico técnico inicial">Solicitar diagnóstico →</a>
+            </div>
+          </article>
+
+          <article class="package-card package-card--highlight spotlight-card">
+            <span class="package-badge">02 · Proyecto Cerrado</span>
+            <h3 class="package-name">Implementación o Rescate Llave en Mano</h3>
+            <p class="package-ideal">Alcance definido desde el inicio para ejecutar, corregir, probar en producción y entregar documentado.</p>
+            <ul class="package-list">
+              <li>Ejecución integral (red MikroTik, PCB/firmware, PLC o levantamiento)</li>
+              <li><strong>Prueba real en vivo</strong> frente a tu equipo antes de dar por cerrado</li>
+              <li>Respaldo de configuración / código y guía operativa de entrega</li>
+            </ul>
+            <div class="package-cta">
+              <a href="#diagnostico" class="btn btn-primary btn-sm" data-select-mode="Implementación / proyecto llave en mano">Cotizar alcance cerrado →</a>
+            </div>
+          </article>
+
+          <article class="package-card spotlight-card">
+            <span class="package-badge">03 · Continuidad</span>
+            <h3 class="package-name">Acompañamiento &amp; Monitoreo Continuo</h3>
+            <p class="package-ideal">Para empresas sin departamento interno de infraestructura que quieren evitar caídas silenciosas y pérdida de backups.</p>
+            <ul class="package-list">
+              <li>Supervisión de enlaces ISP, túneles VPN y disponibilidad de nodos</li>
+              <li>Respaldos periódicos cifrados de RouterOS, bases y configuraciones</li>
+              <li>Soporte técnico prioritario para ajustes, cambios o emergencias</li>
+            </ul>
+            <div class="package-cta">
+              <a href="#diagnostico" class="btn btn-secondary btn-sm" data-select-mode="Acompañamiento / monitoreo mensual">Consultar póliza mensual →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="tax-callout">
+          <div>
+            <strong>Contratación formal y transparencia tributaria en Colombia:</strong> Operado por <strong>Robinson Segura Aponte</strong>, Persona Natural con RUT — <strong>No Responsable de IVA (Responsabilidad 49, Art. 437 E.T.)</strong>, por lo que no se adiciona IVA del 19 %. Entregamos cuenta de cobro y copia del RUT para Documento Soporte electrónico DIAN, además de NDAs y actas de prueba firmables digitalmente.
+          </div>
+          <a href="/terminos/" class="btn btn-ghost btn-sm">Ver Términos →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SINERGIA DEL ECOSISTEMA: DEL PROTOTIPO A LA OPERACIÓN ══ -->
+    <section id="ecosistema" class="section reveal-on-scroll">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Sinergia Única del Ecosistema Ingversia</span>
+          <h2 class="section-title">Del prototipo electrónico a la operación completa en campo</h2>
+          <p class="section-desc">
+            Cuando un proyecto necesita más que una tarjeta suelta o un router aislado, articulamos nuestras divisiones hermanas para entregar soluciones llave en mano sin que tengas que coordinar cuatro proveedores distintos.
+          </p>
+        </div>
+
+        <div class="synergy-grid">
+          <article class="synergy-card spotlight-card">
+            <span class="synergy-step-num">FASE 01 · HARDWARE &amp; CONTROL</span>
+            <h3>PCB, Firmware, Redes &amp; PLC</h3>
+            <p>Diseñamos la electrónica, programamos el microcontrolador o PLC, aseguramos la conectividad de red y documentamos cada circuito.</p>
+            <a href="/electronica-pcb/" class="synergy-link">División Ingeniería →</a>
+          </article>
+
+          <article class="synergy-card spotlight-card">
+            <span class="synergy-step-num">FASE 02 · CARCASA &amp; MECÁNICA</span>
+            <h3>Encapsulado con BerdeX 3D</h3>
+            <p>Fabricamos gabinetes a medida, soportes riel DIN y piezas funcionales en impresión 3D FDM multicolor (hasta 4 colores).</p>
+            <a href="https://3d.ingversia.com" target="_blank" rel="noopener noreferrer" class="synergy-link">3d.ingversia.com ↗</a>
+          </article>
+
+          <article class="synergy-card spotlight-card">
+            <span class="synergy-step-num">FASE 03 · TELEMETRÍA EN VIVO</span>
+            <h3>Monitoreo inspirado en NEXUS</h3>
+            <p>Nuestro entorno real en producción demuestra Edge Local-First, alertas bidireccionales por Telegram y reportes automáticos PDF A4.</p>
+            <a href="https://nexus.ingversia.com" target="_blank" rel="noopener noreferrer" class="synergy-link">nexus.ingversia.com ↗</a>
+          </article>
+
+          <article class="synergy-card spotlight-card">
+            <span class="synergy-step-num">FASE 04 · PORTAL &amp; PRESENCIA</span>
+            <h3>Web Corporativa con IVIA</h3>
+            <p>Si el sistema requiere portal para clientes, correo corporativo o infraestructura web administrada, lo conectamos con IVIA.</p>
+            <a href="https://ivia.ingversia.com" target="_blank" rel="noopener noreferrer" class="synergy-link">ivia.ingversia.com ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PROCESO DE TRABAJO (4 PASOS) ══ -->
+    <section id="proceso" class="section section-tight reveal-on-scroll">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker section-kicker--amber">Metodología de Entrega</span>
+          <h2 class="section-title">Cómo trabajamos cada encargo técnico</h2>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <span class="process-num">01</span>
+            <h3>Diagnóstico técnico</h3>
+            <p>Levantamos la falla, arquitectura actual, equipos involucrados (MikroTik, PCB, PLC o tablero) y restricciones reales de operación.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-num">02</span>
+            <h3>Propuesta y alcance</h3>
+            <p>Definimos entregables concretos, cronograma, qué pruebas se harán y si aplica modalidad presencial en Bogotá o ejecución remota.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-num">03</span>
+            <h3>Implementación y pruebas en vivo</h3>
+            <p>Configuramos o fabricamos y ejecutamos pruebas reales de desconexión, carga en banco o simulación de falla frente a tu equipo.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-num">04</span>
+            <h3>Entrega documentada</h3>
+            <p>Entregamos respaldos limpios, diagrama o manual de operación y soporte post-entrega para que nunca dependas de cajas negras.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CONSTRUCTOR INTERACTIVO DE DIAGNÓSTICO TÉCNICO ══ -->
+    <section id="diagnostico" class="section reveal-on-scroll">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Contacto Directo Estructurado</span>
+          <h2 class="section-title">Arma tu resumen técnico y envíalo en un clic</h2>
+          <p class="section-desc">
+            Selecciona el frente, síntoma y modalidad para generar un diagnóstico inicial listo para WhatsApp o correo corporativo (<a href="mailto:contacto@ingversia.com" class="text-cyan">contacto@ingversia.com</a>). Funciona 100 % en tu navegador, sin registros ni cookies.
+          </p>
+        </div>
+
+        <div class="diagnostic-panel" id="diagnosticBuilder" data-default-service="mikrotik">
+          <div class="diagnostic-grid">
+            <div class="diag-controls">
+              <div class="diag-group">
+                <span class="diag-label">1. ¿Qué frente de ingeniería necesitas?</span>
+                <div class="diag-tabs" id="diagServiceTabs" role="tablist" aria-label="Frente de ingeniería">
+                  <button type="button" class="diag-tab is-active" data-service="mikrotik" role="tab" aria-selected="true">Redes MikroTik</button>
+                  <button type="button" class="diag-tab" data-service="pcb" role="tab" aria-selected="false">Electrónica &amp; PCB</button>
+                  <button type="button" class="diag-tab" data-service="plc" role="tab" aria-selected="false">PLCs &amp; Telemetría</button>
+                  <button type="button" class="diag-tab" data-service="manuales" role="tab" aria-selected="false">Manuales Técnicos</button>
+                </div>
+              </div>
+
+              <div class="diag-group">
+                <span class="diag-label">2. Situación o necesidad principal</span>
+                <div class="diag-chips" id="diagSymptomChips"></div>
+              </div>
+
+              <div class="diag-group">
+                <span class="diag-label">3. Modalidad de atención</span>
+                <div class="diag-chips" id="diagModeChips">
+                  <button type="button" class="diag-chip is-active" data-mode="Diagnóstico técnico inicial" aria-pressed="true">Diagnóstico técnico inicial</button>
+                  <button type="button" class="diag-chip" data-mode="Implementación / proyecto llave en mano" aria-pressed="false">Proyecto llave en mano</button>
+                  <button type="button" class="diag-chip" data-mode="Rescate urgente (falla en operación)" aria-pressed="false">Rescate urgente</button>
+                  <button type="button" class="diag-chip" data-mode="Acompañamiento / monitoreo mensual" aria-pressed="false">Monitoreo mensual</button>
+                </div>
+              </div>
+
+              <div class="diag-inputs">
+                <div class="diag-field">
+                  <label for="diagCompany">Nombre / Empresa (opcional)</label>
+                  <input type="text" id="diagCompany" class="diag-input" placeholder="Ej: Carlos Pérez · Clínica Norte">
+                </div>
+                <div class="diag-field">
+                  <label for="diagCity">Ciudad o tipo de atención (opcional)</label>
+                  <input type="text" id="diagCity" class="diag-input" placeholder="Ej: Bogotá (presencial) / Medellín (remoto)">
+                </div>
+              </div>
+
+              <div class="diag-field">
+                <label for="diagNotes">Equipos, cantidad de enlaces/sedes o detalle breve (opcional)</label>
+                <textarea id="diagNotes" class="diag-textarea" placeholder="Describe brevemente el equipo o falla..."></textarea>
+              </div>
+            </div>
+
+            <div class="diag-output">
+              <div class="diag-preview-box">
+                <div class="diag-preview-head">
+                  <span>RESUMEN_TECNICO_LISTO.txt</span>
+                  <span>+57 322 963 7406</span>
+                </div>
+                <pre class="diag-preview-text" id="diagPreviewText"></pre>
+              </div>
+
+              <div class="diag-actions">
+                <a id="diagWhatsappBtn" href="https://wa.me/573229637406" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.59 5.96L0 24l6.31-1.65a11.88 11.88 0 0 0 5.75 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.45-8.44zM12.07 21.81h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.87 9.87 0 0 1-1.52-5.28c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.45-4.44 9.9-9.89 9.9zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
+                  <span>Enviar diagnóstico por WhatsApp</span>
+                </a>
+                <div class="diag-actions-secondary">
+                  <a id="diagEmailBtn" href="mailto:contacto@ingversia.com" class="btn btn-secondary btn-sm">Enviar por Correo</a>
+                  <button type="button" id="diagCopyBtn" class="btn btn-ghost btn-sm">Copiar resumen</button>
+                </div>
+                <div class="diag-copy-status" id="diagCopyStatus" aria-live="polite"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PREGUNTAS FRECUENTES ══ -->
+    <section id="faq" class="section section-tight reveal-on-scroll">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-kicker">Preguntas Frecuentes</span>
+          <h2 class="section-title">Respuestas directas antes de iniciar</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-question">¿Cómo garantizan que el failover Dual-WAN en MikroTik sí conmuta cuando falla el operador?</summary>
+            <div class="faq-answer">
+              El error clásico es validar solo si el puerto hacia el módem está activo: cuando la fibra del operador cae aguas arriba, el puerto sigue arriba y el tráfico nunca conmuta. Configuramos chequeo recursivo hacia internet real, limpieza de conexiones cuando aplica y realizamos una <strong>prueba real de desconexión frente a tu equipo</strong> antes de cerrar el servicio.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">¿Qué diferencia a esta división del portal NEXUS (nexus.ingversia.com)?</summary>
+            <div class="faq-answer">
+              <strong>NEXUS</strong> es nuestro entorno de demostración en vivo de telemetría IoT industrial, cómputo Edge Local-First, bot bidireccional de Telegram e informes PDF A4. Aquí en <strong>Ingeniería &amp; Automatización</strong> ofrecemos el portafolio completo de servicios de ingeniería aplicada (MikroTik, PCB/RF/firmware, PLC/tableros y manuales), usando a NEXUS como prueba viva de nuestra capacidad en automatización y datos.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">¿Atienden proyectos presenciales en Bogotá y remotos en otras ciudades?</summary>
+            <div class="faq-answer">
+              Sí. Atendemos de forma presencial en <strong>Bogotá D.C. y Sabana</strong> para intervenciones en rack, tableros eléctricos, pruebas de banco, soldadura o levantamiento de circuitos; y atendemos de forma <strong>100 % remota en toda Colombia</strong> para auditorías/rescate MikroTik, VPN entre sedes, diseño PCB, firmware y documentación técnica.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">¿Pueden firmar acuerdos de confidencialidad (NDA) para esquemáticos, topologías o máquinas?</summary>
+            <div class="faq-answer">
+              Sí. Toda la información técnica, credenciales, topologías, código fuente y planos se manejan bajo reserva estricta. Podemos suscribir NDA previo y actas de entrega mediante firma electrónica digital sin fricciones.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">¿Cómo facturan o soportan tributariamente los servicios ante empresas?</summary>
+            <div class="faq-answer">
+              El responsable legal y operador es <strong>Robinson Segura Aponte</strong>, persona natural con RUT en calidad de <strong>No Responsable de IVA (Responsabilidad 49)</strong> conforme al artículo 437 del Estatuto Tributario colombiano. Se emite cuenta de cobro formal junto con copia del RUT para que la empresa genere su Documento Soporte electrónico ante la DIAN sin recargo del 19 % de IVA.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">¿Pueden fabricar la carcasa o soporte físico de un prototipo electrónico?</summary>
+            <div class="faq-answer">
+              Sí. A través de nuestra división hermana <a href="https://3d.ingversia.com" target="_blank" rel="noopener noreferrer" class="text-cyan">BerdeX 3D</a> diseñamos e imprimimos gabinetes, tapas con ventilación, soportes para riel DIN y empaques en manufactura aditiva FDM (hasta 4 colores simultáneos) calibrados a las medidas reales de la PCB.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA FINAL ══ -->
+    <section class="section section-tight reveal-on-scroll">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-banner-copy">
+            <h2>¿Necesitas resolver una falla hoy o cotizar un proyecto técnico?</h2>
+            <p>Escríbenos directamente por WhatsApp o correo con el detalle de tu red, tablero, tarjeta electrónica o necesidad de documentación.</p>
+          </div>
+          <div class="cta-banner-actions">
+            <a href="https://wa.me/573229637406?text=Hola%20Ingversia,%20quiero%20hablar%20con%20Ingenier%C3%ADa%20%26%20Automatizaci%C3%B3n%20sobre%20un%20proyecto." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+              <span>WhatsApp +57 322 963 7406</span>
+            </a>
+            <a href="mailto:contacto@ingversia.com?subject=Consulta%20Ingenier%C3%ADa%20%26%20Automatizaci%C3%B3n%20%E2%80%94%20Ingversia" class="btn btn-secondary">
+              <span>contacto@ingversia.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER + ECOSYSTEM DOCK ══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="ecosystem-dock" aria-label="Ecosistema Ingversia">
+        <span class="dock-label">Ecosistema Ingversia</span>
+        <div class="dock-links">
+          <a href="https://ingversia.com" target="_blank" rel="noopener noreferrer" class="dock-chip">Ingversia (Matriz)</a>
+          <a href="https://ivia.ingversia.com" target="_blank" rel="noopener noreferrer" class="dock-chip">IVIA (Web &amp; Correo)</a>
+          <a href="https://3d.ingversia.com" target="_blank" rel="noopener noreferrer" class="dock-chip">BerdeX 3D</a>
+          <a href="https://nexus.ingversia.com" target="_blank" rel="noopener noreferrer" class="dock-chip">NEXUS (Demo IoT)</a>
+          <a href="/" class="dock-chip dock-chip--active" aria-current="page">Ingeniería &amp; Automatización</a>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <div class="brand-link">
+            <img src="/assets/ingversia_simbolo.svg" alt="" width="32" height="32" class="brand-logo">
+            <div class="brand-text">
+              <span class="brand-title">Ingeniería &amp; Automatización</span>
+              <span class="brand-endorse">by <strong>Ingversia</strong></span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">
+            Ingeniería mecatrónica aplicada en Bogotá D.C., Colombia. Redes MikroTik, electrónica PCB/RF, automatización industrial con PLCs y documentación técnica verificada.
+          </p>
+          <div class="footer-badges">
+            <span class="footer-pill">Cero cookies publicitarias</span>
+            <span class="footer-pill">RUT Resp. 49 · No IVA</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Especialidades</h3>
+          <ul class="footer-links">
+            <li><a href="/redes-mikrotik/">Redes MikroTik &amp; Failover</a></li>
+            <li><a href="/electronica-pcb/">Electrónica, PCB &amp; RF</a></li>
+            <li><a href="/automatizacion-plc/">Automatización &amp; PLCs</a></li>
+            <li><a href="/manuales/">Manuales &amp; Levantamiento</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Contacto Oficial</h3>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/573229637406" target="_blank" rel="noopener noreferrer">WhatsApp: +57 322 963 7406</a></li>
+            <li><a href="mailto:contacto@ingversia.com">contacto@ingversia.com</a></li>
+            <li><a href="mailto:robinson.segura@ingversia.com">robinson.segura@ingversia.com</a></li>
+            <li><a href="https://www.linkedin.com/company/ingversia/" target="_blank" rel="noopener noreferrer">LinkedIn Corporativo</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Legal &amp; Seguridad</h3>
+          <ul class="footer-links">
+            <li><a href="/privacidad/">Política de Privacidad</a></li>
+            <li><a href="/terminos/">Términos y Condiciones</a></li>
+            <li><a href="https://ingversia.com/privacidad.html" target="_blank" rel="noopener noreferrer">Política General Ingversia</a></li>
+            <li><a href="mailto:seguridad@ingversia.com">seguridad@ingversia.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Ingversia · División Ingeniería &amp; Automatización. Operado por Robinson Segura Aponte (Persona Natural · No Responsable de IVA).</p>
+        <p>Bogotá D.C., Colombia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js?v=1.0" defer></script>
+</body>
+</html>

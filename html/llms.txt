@@ -1,32 +1,27 @@
 # Ingeniería & Automatización by Ingversia
 
-> División de ingeniería mecatrónica aplicada del ecosistema Ingversia (Bogotá D.C., Colombia). Especializada en redes empresariales MikroTik con failover Dual-WAN real, diseño electrónico PCB y RF, automatización industrial con PLCs (respaldada por la demo viva NEXUS) y levantamiento técnico documentado.
+> División de ingeniería aplicada de Ingversia en Bogotá D.C., Colombia. Soluciones prácticas y verificables con prueba real en campo o banco de trabajo.
 
-## Información Legal y Contacto
-- **Sitio web oficial:** https://ingenieria.ingversia.com
-- **Marca matriz:** Ingversia (https://ingversia.com)
-- **Responsable legal / operador:** Robinson Segura Aponte — Persona Natural, titular de RUT en calidad de No Responsable de IVA (Responsabilidad 49, artículo 437 del Estatuto Tributario colombiano), Bogotá D.C., Colombia.
-- **WhatsApp directo:** +57 322 963 7406 (https://wa.me/573229637406)
-- **Correo comercial:** contacto@ingversia.com
-- **Correo titular / Habeas Data:** robinson.segura@ingversia.com
-- **Divulgación de seguridad:** seguridad@ingversia.com
-- **LinkedIn:** https://www.linkedin.com/company/ingversia/
+- URL oficial: https://ingenieria.ingversia.com/
+- WhatsApp directo: +57 322 963 7406 (https://wa.me/573229637406)
+- Correo comercial: contacto@ingversia.com
+- Titular / Habeas Data: robinson.segura@ingversia.com
+- Operador responsable: Robinson Segura Aponte (Persona Natural con RUT · Responsabilidad 49 · No Responsable de IVA, Art. 437 E.T., Bogotá D.C., Colombia)
 
-## Líneas de Servicio
-1. **Redes Empresariales, MikroTik, Failover Dual-WAN, VPN e Infraestructura Local** — https://ingenieria.ingversia.com/redes-mikrotik/
-   Rescate de configuraciones de terceros, failover recursivo real con verificación de internet, balanceo PCC sin romper sesiones bancarias/POS, WireGuard/IPsec, VLANs, hardening de RouterOS y servidores locales Debian/Docker con respaldos 3-2-1. Entrega con prueba real de desconexión.
-2. **Diseño de PCBs, Electrónica RF, Microcontroladores y Soldadura** — https://ingenieria.ingversia.com/electronica-pcb/
-   Esquemáticos y layout multicapa (Gerbers + BOM + Pick & Place), etapas RF, firmware embebido, pruebas de banco, soldadura SMD/THT e integración con gabinetes a medida mediante BerdeX 3D (https://3d.ingversia.com).
-3. **Automatización Industrial, PLCs, Tableros & Telemetría** — https://ingenieria.ingversia.com/automatizacion-plc/
-   Programación de PLCs, tableros eléctricos, instrumentación (Modbus RTU/TCP, RS-485, 4–20 mA, 0–10 V), adquisición Edge Local-First, HMI/web y alertas. Presenta a NEXUS (https://nexus.ingversia.com) como caso real en producción.
-4. **Documentación Técnica, Levantamiento de Circuitos y Manuales** — https://ingenieria.ingversia.com/manuales/
-   Ingeniería inversa documentada de tableros, circuitos, máquinas y redes sin planos; diagramas unifilares/arquitectura y manuales de operación, mantenimiento y solución de fallas.
+## Líneas de Servicio Principales
 
-## Ecosistema Ingversia
-- [Ingversia — Marca Matriz](https://ingversia.com)
-- [IVIA — Presencia Digital Administrada](https://ivia.ingversia.com)
-- [BerdeX 3D — Manufactura Aditiva Multicolor](https://3d.ingversia.com)
-- [NEXUS — Entorno Demo en Vivo de Telemetría IoT](https://nexus.ingversia.com)
-- [Política de Privacidad de División](https://ingenieria.ingversia.com/privacidad/)
+- [Redes MikroTik, VPN & Servidores Locales](https://ingenieria.ingversia.com/redes-mikrotik/): Failover Dual-WAN real con rutas recursivas (verificado con desconexión física), VPN seguras con WireGuard y Tailscale, auditoría/rescate MikroTik RouterOS, Pi-hole y servidores Debian/Docker con respaldos 3-2-1.
+- [Electrónica Aplicada, PCBs 1–2 Capas & Firmware](https://ingenieria.ingversia.com/electronica-pcb/): Diseño de esquemáticos y PCBs de 1–2 capas (Gerbers y BOM), firmware para ESP32/Arduino, sensores y módulos inalámbricos/comunicación, pruebas de banco, armado THT (Through-Hole) y gabinetes con BerdeX 3D.
+- [Automatización Industrial, Tableros & PLCs](https://ingenieria.ingversia.com/automatizacion-plc/): Tableros de control y potencia, variadores VFD, programación PLC, sensores industriales, comunicación Modbus y telemetría respaldada por la demo en vivo NEXUS.
+- [Manuales Técnicos & Levantamiento de Circuitos](https://ingenieria.ingversia.com/manuales/): Ingeniería inversa documentada, levantamiento cable a cable, diagramas eléctricos/unifilares y de red (WAN, VPN y segmentos locales), y manuales de operación y fallas en PDF A4.
+
+## Documentación Legal y Ecosistema Ingversia
+
+- [Inicio de División](https://ingenieria.ingversia.com/)
+- [Política de Privacidad](https://ingenieria.ingversia.com/privacidad/)
 - [Términos y Condiciones](https://ingenieria.ingversia.com/terminos/)
-- [Documentación Completa para LLMs](https://ingenieria.ingversia.com/llms-full.txt)
+- [Información Técnica Completa (llms-full.txt)](https://ingenieria.ingversia.com/llms-full.txt)
+- [Ingversia Matriz](https://ingversia.com/)
+- [IVIA (Web & Correo Corporativo)](https://ivia.ingversia.com/)
+- [BerdeX 3D (Manufactura Aditiva FDM)](https://3d.ingversia.com/)
+- [NEXUS (Demo IoT Industrial en Vivo)](https://nexus.ingversia.com/)

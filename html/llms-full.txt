@@ -1,50 +1,71 @@
-# Ingeniería & Automatización by Ingversia — Documentación Técnica Completa
+# Ingeniería & Automatización by Ingversia — Ficha Técnica Completa
 
-## 1. Identidad, Propósito y Marco Jurídico
-- **División:** Ingeniería & Automatización by Ingversia (`https://ingenieria.ingversia.com`).
-- **Marca matriz:** Ingversia (`https://ingversia.com`), Bogotá D.C., Colombia.
-- **Operador / Responsable:** Robinson Segura Aponte, Ingeniero Mecatrónico, persona natural titular de Registro Único Tributario (RUT) en calidad de **No Responsable del Impuesto sobre las Ventas (IVA — Responsabilidad 49)** conforme al artículo 437 del Estatuto Tributario de Colombia. No aplica cobro de IVA del 19 %; se entrega cuenta de cobro y copia de RUT para Documento Soporte electrónico DIAN.
-- **Canales oficiales:** WhatsApp `+57 322 963 7406`, correo comercial `contacto@ingversia.com`, Habeas Data `robinson.segura@ingversia.com`, divulgación de seguridad `seguridad@ingversia.com`, LinkedIn `https://www.linkedin.com/company/ingversia/`.
-- **Privacidad y cero rastreo:** El sitio opera sin cookies publicitarias ni rastreadores de terceros (`https://ingenieria.ingversia.com/privacidad/`), alineado con la Ley 1581 de 2012, Decreto 1377 de 2013 y la política general `https://ingversia.com/privacidad.html`.
+Sitio oficial: https://ingenieria.ingversia.com/
+Ubicación: Bogotá D.C., Colombia (atención presencial en Bogotá/Sabana y soporte remoto a nivel nacional).
+Operador / Responsable legal: Robinson Segura Aponte — Persona Natural titular de RUT, No Responsable de IVA (Responsabilidad 49, Art. 437 Estatuto Tributario de Colombia), bajo la marca matriz Ingversia.
 
----
-
-## 2. Catálogo Detallado de Servicios
-
-### 2.1 Redes Empresariales, MikroTik, Failover Dual-WAN, VPN e Infraestructura Local (`/redes-mikrotik/`)
-- **Problema principal que resuelve:** Empresas que contrataron dos enlaces de internet pero quedan incomunicadas cuando cae el proveedor principal porque el failover quedó mal configurado (por ejemplo, `check-gateway=ping` contra el módem local o reglas que rompen sesiones POS/bancarias/VPN).
-- **Entregables y capacidades:**
-  - Failover Dual-WAN y Multi-WAN real mediante rutas recursivas (`scope`/`target-scope`) validando salida real hacia internet.
-  - Balanceo de carga PCC con listas de excepción para tráfico sensible (facturación electrónica, datáfonos POS, banca, VoIP y cámaras).
-  - VPN corporativas seguras entre sedes y para teletrabajo (`WireGuard`, `IPsec`, `L2TP`, redes mesh `Tailscale`).
-  - Segmentación por `VLANs` (invitados, administración, IoT/cámaras, servidores), QoS y endurecimiento (*hardening*) de RouterOS.
-  - Auditoría y rescate de configuraciones existentes realizadas por terceros.
-  - Infraestructura local segura para PYMEs: nodos Debian/Docker aislados de la LAN física, acceso Zero Trust y copias de seguridad 3-2-1 automatizadas.
-- **Garantía de cierre:** Prueba real de desconexión en sitio o remota verificando tiempo de conmutación, retorno limpio, continuidad de VPN y entrega de backups `.rsc` y `.backup`.
-
-### 2.2 Diseño de PCBs, Electrónica RF, Microcontroladores y Soldadura (`/electronica-pcb/`)
-- Diseño de esquemáticos y layout de PCBs (2 y múltiples capas) cuidando potencia, aislamiento galvánico, integridad de señal y reglas DFM. Entrega de Gerbers, archivos de taladro, BOM y Pick & Place.
-- Electrónica de Radiofrecuencia (RF), líneas de impedancia controlada y acoplamiento inalámbrico.
-- Programación de microcontroladores y firmware embebido confiable (`UART`, `RS-485/Modbus`, `SPI`, `I2C`, `CAN`, watchdog y recuperación ante fallas).
-- Armado de prototipos, pruebas de banco, soldadura fina SMD/THT y reparación electrónica especializada.
-- **Diferenciador del ecosistema:** Fabricación de gabinetes, tapas etiquetadas multicolor y soportes riel DIN mediante **BerdeX 3D** (`https://3d.ingversia.com`).
-
-### 2.3 Automatización Industrial, PLCs, Tableros & Telemetría (`/automatizacion-plc/`)
-- Programación e integración de PLCs industriales y tableros eléctricos/de control con protecciones y enclavamientos.
-- Integración de instrumentación y protocolos: `Modbus RTU/TCP`, `RS-485`, lazos `4–20 mA`, `0–10 V`, relés y contactores.
-- Sistemas de adquisición de datos local-first, tableros HMI/web y alertas automáticas sin licencias por asiento.
-- **Prueba visual real en producción — NEXUS (`https://nexus.ingversia.com`):** Entorno de demostración en vivo de telemetría IoT industrial, cómputo Edge Local-First, PostgreSQL local + respaldo cloud, bot Telegram bidireccional e informes PDF A4.
-
-### 2.4 Documentación Técnica, Levantamiento de Circuitos y Manuales (`/manuales/`)
-- Ingeniería inversa documentada: levantamiento físico de tableros, circuitos, máquinas y redes existentes sin planos previos.
-- Manuales de operación, instalación, mantenimiento preventivo y solución de fallas (*troubleshooting* con matrices Síntoma → Causa → Verificación).
-- Diagramas eléctricos, electrónicos, unifilares y de arquitectura de red limpios para auditorías, seguridad o capacitación de operarios.
+Canales oficiales:
+- WhatsApp empresarial: +57 322 963 7406 (https://wa.me/573229637406)
+- Correo comercial y cotizaciones: contacto@ingversia.com
+- Titular / Habeas Data (Ley 1581 de 2012): robinson.segura@ingversia.com
+- LinkedIn: https://www.linkedin.com/company/ingversia/
 
 ---
 
-## 3. Cobertura y Modalidades de Contratación
-- **Cobertura:** Atención presencial en **Bogotá D.C. y Sabana** (racks, tableros, soldadura y levantamiento) y atención **remota en toda Colombia** (MikroTik, VPN, diseño PCB, firmware y documentación).
-- **Modalidades:**
-  1. *Diagnóstico & Auditoría Técnica* (valor descontable cuando el cliente aprueba la implementación).
-  2. *Implementación o Rescate Llave en Mano* (alcance acotado + prueba en vivo + entrega documentada).
-  3. *Acompañamiento & Monitoreo Continuo* (supervisión de enlaces, alertas tempranas, backups y soporte prioritario).
+## 1. Redes MikroTik, VPN & Infraestructura Local
+URL: https://ingenieria.ingversia.com/redes-mikrotik/
+
+Alcance real y verificable:
+- **Failover Dual-WAN real con rutas recursivas:** Configuración verificada en MikroTik RouterOS (v6/v7) para conmutar automáticamente entre proveedor principal y respaldo cuando cae la salida real a Internet, incluso si el módem del ISP sigue encendido. Se valida mediante prueba real de desconexión en vivo.
+- **VPN seguras con WireGuard y Tailscale:** Interconexión cifrada para acceso remoto administrativo o enlace entre oficina, servidores y sedes sin exponer puertos críticos innecesarios.
+- **Auditoría, rescate y endurecimiento básico MikroTik:** Revisión de routers heredados con fallas de corte o reglas riesgosas, limpieza de servicios expuestos, firewall base y entrega de copia de respaldo (.rsc / .backup) documentada.
+- **Servidores locales seguros y backups 3-2-1:** Despliegue sobre Linux Debian y Docker, DNS local y bloqueo con Pi-hole, y estrategia de copias de seguridad 3-2-1 con contingencia operativa.
+
+---
+
+## 2. Electrónica Aplicada, PCBs 1–2 Capas & Firmware
+URL: https://ingenieria.ingversia.com/electronica-pcb/
+
+Alcance real y verificable:
+- **Esquemáticos y PCBs de 1–2 capas:** Captura esquemática, enrutamiento de tarjeta impresa y generación de paquete completo de fabricación (archivos Gerber y lista de materiales BOM).
+- **Microcontroladores, sensores y comunicación:** Desarrollo de firmware embebido sobre ESP32 / Arduino, lectura de sensores, control de actuadores e integración de módulos inalámbricos o comunicación serial según el proyecto.
+- **Pruebas de banco y armado THT (Through-Hole):** Ensamble físico y soldadura manual de componentes pasantes (THT), pruebas eléctricas en banco y validación de señales, consumo y protecciones.
+- **Encapsulado mecánico en 3D:** Diseño mecánico e integración en gabinetes a medida o riel DIN mediante la división hermana BerdeX 3D (https://3d.ingversia.com/).
+
+---
+
+## 3. Automatización Industrial, Tableros & PLCs
+URL: https://ingenieria.ingversia.com/automatizacion-plc/
+
+Alcance real y verificable:
+- **Tableros de control y potencia:** Diseño, cableado estructurado, protecciones, relevos, contactores y lógica de control para maquinaria o procesos.
+- **Programación PLC y variadores (VFD):** Arranque, control de velocidad, integración de sensores industriales y enclavamientos de seguridad operativa.
+- **Telemetría Edge e integración con NEXUS:** Lectura industrial por Modbus / serial / Ethernet local e integración demostrable con NEXUS (https://nexus.ingversia.com/), entorno real en producción con enfoque Edge Local-First, alertas bidireccionales por Telegram e informes PDF A4 automáticos.
+
+---
+
+## 4. Manuales Técnicos & Levantamiento de Circuitos
+URL: https://ingenieria.ingversia.com/manuales/
+
+Alcance real y verificable:
+- **Levantamiento físico (ingeniería inversa documentada):** Inspección cable a cable de tableros eléctricos, máquinas o racks sin planos previos; etiquetado e inventario de borneras, protecciones e IPs.
+- **Diagramas limpios:** Planos unifilares, esquemas de control/potencia, diagramas electrónicos y topologías de red (WAN, VPN y segmentos locales).
+- **Manuales de operación, mantenimiento y solución de fallas:** Documentación maquetada en PDF A4 con matriz de fallas paso a paso para reducir la dependencia operativa de una sola persona.
+
+---
+
+## 5. Sinergia del Ecosistema Ingversia
+Cuando un proyecto requiere hardware, mecánica, monitoreo y presencia digital integrados:
+1. Hardware, control y redes: Ingeniería & Automatización (https://ingenieria.ingversia.com/)
+2. Carcasa y piezas funcionales FDM multicolor (hasta 4 colores): BerdeX 3D (https://3d.ingversia.com/)
+3. Telemetría IoT, alertas Telegram y reportes PDF A4: NEXUS (https://nexus.ingversia.com/)
+4. Portal web corporativo, correo empresarial y SEO: IVIA (https://ivia.ingversia.com/)
+
+---
+
+## 6. Modalidades, Prueba Real y Contratación
+- Modalidades: Diagnóstico / Auditoría puntual; Implementación o Rescate llave en mano; Soporte y mantenimiento periódico.
+- Verificación obligatoria: Todo proyecto o rescate culmina con prueba real de funcionamiento (desconexión física WAN, prueba en banco electrónico o marcha de tablero) y documentación de respaldo.
+- Contratación formal en Colombia: Persona Natural con RUT (Responsabilidad 49, No Responsable de IVA), cuenta de cobro + copia de RUT para Documento Soporte electrónico DIAN y NDA firmable digitalmente bajo solicitud.
+- Términos: https://ingenieria.ingversia.com/terminos/
+- Privacidad: https://ingenieria.ingversia.com/privacidad/ | Política general: https://ingversia.com/privacidad.html

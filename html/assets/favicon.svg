@@ -1,8 +1,8 @@
 <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
   <title>Ingeniería by Ingversia Favicon</title>
-  <rect x="0.5" y="0.5" width="31" height="31" rx="7" fill="#0b1324" stroke="#1e3354" stroke-width="1"/>
-  <rect x="5" y="5" width="9.5" height="9.5" rx="2" fill="#f8fafc"/>
-  <rect x="17.5" y="5" width="9.5" height="9.5" rx="2" fill="#f8fafc"/>
-  <rect x="5" y="17.5" width="9.5" height="9.5" rx="2" fill="#f8fafc"/>
-  <rect x="17.5" y="17.5" width="9.5" height="9.5" rx="2" fill="#06b6d4"/>
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.8" fill="#0b1324" stroke="#1e3354" stroke-width="1.2"/>
+  <rect x="5" y="5" width="9.8" height="9.8" rx="2.2" fill="#f8fafc"/>
+  <rect x="17.2" y="5" width="9.8" height="9.8" rx="2.2" fill="#f8fafc"/>
+  <rect x="5" y="17.2" width="9.8" height="9.8" rx="2.2" fill="#f8fafc"/>
+  <rect x="17.2" y="17.2" width="9.8" height="9.8" rx="2.2" fill="#06b6d4"/>
 </svg>

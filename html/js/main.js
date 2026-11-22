@@ -186,26 +186,25 @@
     mikrotik: {
       label: 'Redes & MikroTik',
       subject: 'Diagnóstico Técnico Redes MikroTik — Ingeniería by Ingversia',
-      placeholder: 'Ej: Tenemos 2 ISP (fibra + respaldo), router RB4011, 25 usuarios y POS/VPN que se cae al conmutar...',
+      placeholder: 'Ej: Tenemos 2 ISP (fibra + respaldo), router MikroTik, queremos failover real, VPN segura o servidor local con backups...',
       symptoms: [
         'Failover Dual-WAN no conmuta en producción',
-        'Balanceo PCC / separación tráfico POS-VoIP-cámaras',
-        'VPN entre sedes o teletrabajo (WireGuard / IPsec)',
-        'Segmentación VLANs, QoS y hardening RouterOS',
-        'Auditoría / rescate de red hecha por terceros',
-        'Servidor local seguro, acceso Zero Trust y backups 3-2-1'
+        'VPN segura entre sedes o acceso remoto (WireGuard / Tailscale)',
+        'Auditoría, rescate y endurecimiento básico de MikroTik',
+        'Servidor local seguro (Debian/Docker), Pi-hole y backups 3-2-1',
+        'Respaldo de configuración y documentación de red actual'
       ]
     },
     pcb: {
-      label: 'Electrónica, PCB & RF',
+      label: 'Electrónica, PCBs & Firmware',
       subject: 'Cotización Electrónica / PCB / Firmware — Ingeniería by Ingversia',
-      placeholder: 'Ej: Necesitamos diseñar tarjeta 2 o 4 capas con ESP32/STM32, etapa RS-485 y carcasa 3D...',
+      placeholder: 'Ej: Necesitamos diseñar PCB de 1-2 capas con ESP32, lectura de sensores, armado THT y carcasa 3D...',
       symptoms: [
-        'Diseño de esquemático y layout PCB (Gerbers + BOM)',
-        'Etapa de Radiofrecuencia (RF) / enlace inalámbrico',
-        'Firmware embebido y adquisición de sensores',
-        'Armado, pruebas de banco y soldadura SMD/THT',
-        'Hardware + carcasa a medida con BerdeX 3D'
+        'Diseño de esquemático y PCB (1–2 capas y archivos Gerbers)',
+        'Microcontroladores, sensores y firmware embebido (ESP32 / Arduino)',
+        'Armado, pruebas de banco y soldadura THT (componentes pasantes)',
+        'Hardware + carcasa a medida con BerdeX 3D',
+        'Enlaces inalámbricos / módulos de comunicación para telemetría'
       ]
     },
     plc: {

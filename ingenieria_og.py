@@ -175,7 +175,7 @@ def generate_og_banner():
 
     draw.text(
         (margin_x, s(216)),
-        "Redes MikroTik Dual-WAN  ·  Electrónica PCB & RF  ·  Automatización PLC & NEXUS  ·  Manuales Técnicos",
+        "Redes MikroTik Dual-WAN  ·  Electrónica & PCB  ·  Automatización PLC & NEXUS  ·  Manuales Técnicos",
         font=font_sub,
         fill="#bae6fd",
     )
@@ -188,16 +188,16 @@ def generate_og_banner():
         {
             "kicker": "01 · REDES & MIKROTIK",
             "title": "Failover & VPN",
-            "desc": "Dual-WAN recursivo real, PCC, WireGuard, VLANs y rescate de redes.",
+            "desc": "Dual-WAN recursivo real, WireGuard, Tailscale y servidores locales.",
             "route": "/redes-mikrotik/",
             "accent": "#22d3ee",
             "bg": "#081421",
             "border": "#155e75",
         },
         {
-            "kicker": "02 · HARDWARE & RF",
+            "kicker": "02 · HARDWARE & EMBEDDED",
             "title": "Electrónica & PCB",
-            "desc": "Esquemáticos, layout multicapa, firmware, SMD y carcasas 3D.",
+            "desc": "Diseño PCB 1-2 capas, microcontroladores, armado THT y carcasas 3D.",
             "route": "/electronica-pcb/",
             "accent": "#fbbf24",
             "bg": "#15120a",

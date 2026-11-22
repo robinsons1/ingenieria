@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Redes MikroTik, Failover Dual-WAN Real, VPN y Servidores Locales | Ingeniería by Ingversia</title>
-  <meta name="description" content="Rescate y configuración profesional de MikroTik en Bogotá y Colombia: failover Dual-WAN recursivo real, balanceo PCC, VPN WireGuard/IPsec, VLANs, hardening y servidores locales seguros con respaldo 3-2-1.">
+  <meta name="description" content="Rescate y configuración profesional de MikroTik en Bogotá y Colombia: failover Dual-WAN recursivo real, VPN WireGuard y Tailscale, endurecimiento básico y servidores locales seguros con respaldo 3-2-1.">
   <meta name="author" content="Ingeniería &amp; Automatización by Ingversia">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#06080e">
@@ -18,20 +18,20 @@
   <meta property="og:url" content="https://ingenieria.ingversia.com/redes-mikrotik/">
   <meta property="og:site_name" content="Ingeniería &amp; Automatización by Ingversia">
   <meta property="og:locale" content="es_CO">
-  <meta property="og:title" content="Redes MikroTik, Failover Dual-WAN Real y VPN Corporativas | by Ingversia">
+  <meta property="og:title" content="Redes MikroTik, Failover Dual-WAN Real y VPN Seguras | by Ingversia">
   <meta property="og:description" content="¿Pagas doble internet y cuando cae el principal igual te quedas sin servicio? Implementamos failover recursivo real con prueba física de desconexión en vivo.">
-  <meta property="og:image" content="https://ingenieria.ingversia.com/assets/og-banner.jpg?v=2">
+  <meta property="og:image" content="https://ingenieria.ingversia.com/assets/og-banner.jpg?v=3">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Redes MikroTik, Failover Dual-WAN Real y VPN | Ingeniería by Ingversia">
-  <meta name="twitter:description" content="Failover recursivo real, balanceo PCC, WireGuard/IPsec, VLANs, hardening y servidores locales seguros con prueba de desconexión en vivo.">
-  <meta name="twitter:image" content="https://ingenieria.ingversia.com/assets/og-banner.jpg?v=2">
+  <meta name="twitter:description" content="Failover recursivo real, WireGuard/Tailscale, rescate MikroTik y servidores locales seguros con backups 3-2-1.">
+  <meta name="twitter:image" content="https://ingenieria.ingversia.com/assets/og-banner.jpg?v=3">
 
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=3">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png?v=3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=3">
 
   <script type="application/ld+json">
   {
@@ -54,7 +54,7 @@
           "url": "https://ingversia.com/"
         },
         "areaServed": "Colombia",
-        "description": "Configuración y rescate de routers MikroTik RouterOS con failover Dual-WAN recursivo real, balanceo PCC, VPN WireGuard/IPsec, VLANs, hardening y servidores locales con respaldo 3-2-1."
+        "description": "Configuración y rescate de routers MikroTik RouterOS con failover Dual-WAN recursivo real, VPN WireGuard y Tailscale, endurecimiento básico y servidores locales Debian/Docker con respaldo 3-2-1."
       },
       {
         "@type": "FAQPage",
@@ -69,10 +69,10 @@
           },
           {
             "@type": "Question",
-            "name": "¿Qué pasa con las sesiones de facturación POS o bancos cuando se hace balanceo PCC?",
+            "name": "¿Cómo evitan que las sesiones de facturación o VPN queden colgadas al cambiar de proveedor?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Se configuran listas de direcciones y enrutamiento por políticas para que pasarelas bancarias, datáfonos, facturación electrónica, cámaras o telefonía salgan por un enlace fijo con respaldo automático, evitando cierres de sesión por cambio constante de IP."
+              "text": "Definimos prioridad limpia de rutas con conmutación hacia un único enlace activo cuando cae el principal, acompañada de limpieza controlada de conexiones para que datáfonos, facturación electrónica y túneles VPN reconecten sin intervención manual."
             }
           }
         ]
@@ -87,7 +87,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
 
-  <link rel="stylesheet" href="/css/styles.css?v=2.0">
+  <link rel="stylesheet" href="/css/styles.css?v=3.0">
 </head>
 <body id="top">
 
@@ -134,13 +134,13 @@
             <li role="none">
               <a href="/redes-mikrotik/" role="menuitem" class="dropdown-link" aria-current="page">
                 <span class="di" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 14V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v7"/></svg></span>
-                <span><strong>Redes MikroTik &amp; Failover</strong><em>Dual-WAN real, PCC, VPN y servidores</em></span>
+                <span><strong>Redes MikroTik &amp; Failover</strong><em>Dual-WAN real, VPN segura y servidores locales</em></span>
               </a>
             </li>
             <li role="none">
               <a href="/electronica-pcb/" role="menuitem" class="dropdown-link">
                 <span class="di di--amber" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v5M15 1v5M9 18v5M15 18v5"/></svg></span>
-                <span><strong>Electrónica, PCB &amp; RF</strong><em>Esquemáticos, firmware y soldadura SMD</em></span>
+                <span><strong>Electrónica, PCBs &amp; Firmware</strong><em>Diseño PCB 1–2 capas, ESP32 y armado THT</em></span>
               </a>
             </li>
             <li role="none">
@@ -166,7 +166,6 @@
 
         <li><a href="/#modalidades">Modalidades</a></li>
         <li><a href="/#proceso">Proceso</a></li>
-        <li><a href="https://nexus.ingversia.com" target="_blank" rel="noopener noreferrer" class="nav-link-demo">Demo NEXUS</a></li>
       </ul>
     </nav>
 
@@ -202,7 +201,7 @@
         <nav class="mobile-nav-menu" aria-label="Navegación móvil">
           <a href="/" class="mobile-nav-link"><div class="mobile-link-text"><span class="mobile-link-title">Inicio de División</span><span class="mobile-link-sub">Portafolio general de ingeniería</span></div><span class="mobile-link-arrow">→</span></a>
           <a href="/redes-mikrotik/" class="mobile-nav-link" aria-current="page"><div class="mobile-link-text"><span class="mobile-link-title">Redes &amp; MikroTik</span><span class="mobile-link-sub">Failover Dual-WAN, VPN y servidores</span></div><span class="mobile-link-arrow">→</span></a>
-          <a href="/electronica-pcb/" class="mobile-nav-link"><div class="mobile-link-text"><span class="mobile-link-title">Electrónica, PCB &amp; RF</span><span class="mobile-link-sub">Esquemáticos, firmware y soldadura</span></div><span class="mobile-link-arrow">→</span></a>
+          <a href="/electronica-pcb/" class="mobile-nav-link"><div class="mobile-link-text"><span class="mobile-link-title">Electrónica, PCBs &amp; Firmware</span><span class="mobile-link-sub">Diseño 1–2 capas, ESP32 y armado THT</span></div><span class="mobile-link-arrow">→</span></a>
           <a href="/automatizacion-plc/" class="mobile-nav-link"><div class="mobile-link-text"><span class="mobile-link-title">Automatización &amp; PLC</span><span class="mobile-link-sub">Tableros, Modbus y demo NEXUS</span></div><span class="mobile-link-arrow">→</span></a>
           <a href="/manuales/" class="mobile-nav-link"><div class="mobile-link-text"><span class="mobile-link-title">Manuales Técnicos</span><span class="mobile-link-sub">Levantamiento inverso y diagramas</span></div><span class="mobile-link-arrow">→</span></a>
         </nav>
@@ -236,7 +235,7 @@
               ¿Pagas dos proveedores de internet y <span class="text-gradient">cuando cae el principal</span> igual se detiene tu operación?
             </h1>
             <p class="hero-subtitle">
-              Rescatamos e implementamos redes <strong>MikroTik</strong> con <strong>failover Dual-WAN recursivo real</strong>, VPN estables entre sedes, VLANs seguras y servidores locales respaldados, validados con <strong>prueba real de desconexión en sitio o remota</strong>.
+              Rescatamos e implementamos redes <strong>MikroTik</strong> con <strong>failover Dual-WAN recursivo real</strong>, VPN seguras entre sedes y servidores locales respaldados, validados con <strong>prueba real de desconexión en sitio o remota</strong>.
             </p>
             <div class="hero-actions">
               <a href="https://wa.me/573229637406?text=Hola%20Ingversia,%20pagamos%20doble%20internet%20pero%20el%20failover%20MikroTik%20no%20conmuta%20bien.%20Quiero%20agendar%20diagn%C3%B3stico." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
@@ -251,7 +250,7 @@
             <ul class="metric-list">
               <li><span>Validación WAN</span><strong>Rutas recursivas a internet real</strong></li>
               <li><span>Cierre del servicio</span><strong>Prueba física/remota de caída</strong></li>
-              <li><span>Seguridad RouterOS</span><strong>Hardening de puertos + acceso</strong></li>
+              <li><span>Seguridad RouterOS</span><strong>Endurecimiento de puertos y acceso</strong></li>
               <li><span>Continuidad</span><strong>Backup .rsc + .backup cifrado</strong></li>
               <li><span>Infraestructura local</span><strong>Debian/Docker + Tailscale + 3-2-1</strong></li>
               <li><span>Cobertura</span><strong>Bogotá presencial / Colombia remoto</strong></li>
@@ -277,7 +276,7 @@
             </div>
             <ul class="compare-list">
               <li>Solo verifica <code>check-gateway=ping</code> contra la IP local del módem o puerta de enlace: si cae la fibra óptica del ISP, el puerto sigue arriba y <strong>nunca conmuta</strong>.</li>
-              <li>Mezcla tráfico bancario, facturación POS o telefonía en balanceo ciego, rompiendo sesiones cada pocos minutos.</li>
+              <li>Deja conexiones activas colgadas tras la caída, impidiendo que la facturación POS, datáfonos o túneles VPN retomen operación.</li>
               <li>Deja Winbox, API, Telnet o DNS abiertos hacia internet (riesgo de secuestro o ataques de amplificación).</li>
               <li>Se entrega sin probar desconexión real, sin copias de seguridad y sin diagrama para el cliente.</li>
             </ul>
@@ -290,8 +289,8 @@
             </div>
             <ul class="compare-list">
               <li><strong>Rutas recursivas (scope/target-scope)</strong> validando múltiples destinos reales en internet por cada WAN antes de mantenerla activa.</li>
-              <li>Separación inteligente: tráfico crítico (POS, facturación electrónica, VoIP, VPN) con persistencia y retorno controlado.</li>
-              <li>Endurecimiento completo (<em>hardening</em>) de RouterOS, reglas de firewall, listas de gestión segura y bloqueo de escaneos.</li>
+              <li>Transición limpia entre enlace principal y respaldo con limpieza controlada de sesiones para que POS, cámaras y VPN sigan operando.</li>
+              <li>Endurecimiento básico de RouterOS, reglas limpias de firewall, bloqueo de servicios expuestos y acceso administrativo seguro.</li>
               <li><strong>Prueba de desconexión medida</strong> frente al cliente + backups cifrados + ficha técnica de puertos e IPs.</li>
             </ul>
           </article>
@@ -307,70 +306,48 @@
           <h2 class="section-title">Redes MikroTik e infraestructura local a la medida de tu operación</h2>
         </div>
 
-        <div class="services-grid">
+        <div class="services-grid services-grid--2">
           <article class="service-card spotlight-card">
             <span class="service-kicker">01 · Alta Disponibilidad</span>
-            <h3 class="service-title">Failover Dual-WAN / Multi-WAN Real</h3>
-            <p class="service-desc">Conmutación automática por caída real de salida a internet o alta pérdida de paquetes, midiendo tiempos reales de traspaso y retorno limpio.</p>
+            <h3 class="service-title">Failover Dual-WAN Real</h3>
+            <p class="service-desc">Conmutación automática por caída real de salida a internet hacia el enlace de respaldo, midiendo tiempos reales de traspaso y retorno limpio cuando regresa el principal.</p>
             <ul class="service-list">
-              <li>Rutas recursivas con doble objetivo de verificación</li>
-              <li>Limpieza controlada de conexiones colgadas (VoIP/VPN)</li>
+              <li>Rutas recursivas con doble objetivo externo de verificación</li>
+              <li>Limpieza controlada de conexiones colgadas tras el corte</li>
               <li>Alertas automáticas a Telegram/correo si cae un operador</li>
             </ul>
           </article>
 
           <article class="service-card spotlight-card">
-            <span class="service-kicker">02 · Rendimiento</span>
-            <h3 class="service-title">Balanceo PCC &amp; Tráfico Crítico</h3>
-            <p class="service-desc">Aprovecha ambos enlaces en operación diaria sin dañar plataformas de facturación electrónica, datáfonos POS, cámaras o portales bancarios.</p>
+            <span class="service-kicker">02 · Conectividad Segura</span>
+            <h3 class="service-title">VPN Segura Entre Sedes &amp; Teletrabajo</h3>
+            <p class="service-desc">Interconexión cifrada entre sucursales, bodegas y equipos remotos para acceder a sistemas internos o servidores sin abrir puertos inseguros hacia internet.</p>
             <ul class="service-list">
-              <li>Balanceo PCC adaptado a la capacidad real de cada ISP</li>
-              <li>Listas de excepción (<em>src-address / address-list</em>)</li>
-              <li>Priorización QoS para voz, caja y servidores</li>
+              <li>Túneles WireGuard de baja latencia y reconexión rápida</li>
+              <li>Redes mesh Zero Trust (Tailscale) con acceso granular</li>
+              <li>Reconexión estable ante cambios entre proveedor principal y respaldo</li>
             </ul>
           </article>
 
           <article class="service-card spotlight-card">
-            <span class="service-kicker">03 · Conectividad Segura</span>
-            <h3 class="service-title">VPN Entre Sedes &amp; Teletrabajo</h3>
-            <p class="service-desc">Interconexión cifrada entre sucursales, bodegas y equipos remotos para acceder a ERP, carpetas o cámaras sin abrir puertos inseguros.</p>
+            <span class="service-kicker service-kicker--amber">03 · Rescate Técnico</span>
+            <h3 class="service-title">Auditoría, Rescate &amp; Endurecimiento MikroTik</h3>
+            <p class="service-desc">Intervenimos routers con cortes intermitentes o configuraciones heredadas sin respaldo para ordenarlos, cerrar brechas obvias y documentar cada regla.</p>
             <ul class="service-list">
-              <li>WireGuard de baja latencia y reconexión rápida</li>
-              <li>IPsec / L2TP para compatibilidad corporativa</li>
-              <li>Redes mesh Zero Trust (Tailscale) para acceso granular</li>
+              <li>Revisión de rutas, NAT y firewall conflictivo dejado por terceros</li>
+              <li>Cierre de Winbox, SSH y DNS abiertos hacia WAN pública</li>
+              <li>Entrega de respaldo <code>.rsc</code>, <code>.backup</code> y mapa de red limpio</li>
             </ul>
           </article>
 
           <article class="service-card spotlight-card">
-            <span class="service-kicker">04 · Segmentación</span>
-            <h3 class="service-title">VLANs, QoS &amp; Hardening RouterOS</h3>
-            <p class="service-desc">Aislamiento de red de invitados, administración, cámaras/IoT y área contable para frenar movimientos laterales y saturación de Wi-Fi.</p>
+            <span class="service-kicker service-kicker--amber">04 · Soberanía Local</span>
+            <h3 class="service-title">Servidores Locales Seguros, Pi-hole &amp; Backups 3-2-1</h3>
+            <p class="service-desc">Implementación de nodos locales Debian/Docker para servicios internos, bloqueo DNS y copias de seguridad automáticas verificadas sin depender de nubes costosas.</p>
             <ul class="service-list">
-              <li>Aislamiento entre subredes mediante firewall explícito</li>
-              <li>Cierre de servicios vulnerables y actualización controlada</li>
-              <li>Control de ancho de banda y colas para invitados</li>
-            </ul>
-          </article>
-
-          <article class="service-card spotlight-card">
-            <span class="service-kicker service-kicker--amber">05 · Rescate Técnico</span>
-            <h3 class="service-title">Auditoría de Configuraciones de Terceros</h3>
-            <p class="service-desc">Intervenimos routers lentos, con cortes intermitentes o configuraciones heredadas sin respaldo ni documentación para estabilizarlos sin parar la empresa.</p>
-            <ul class="service-list">
-              <li>Diagnóstico de reglas NAT/Mangle conflictivas y loops</li>
-              <li>Ventana de cambio segura con rollback inmediato</li>
-              <li>Entrega de mapa de red limpio y credenciales organizadas</li>
-            </ul>
-          </article>
-
-          <article class="service-card spotlight-card">
-            <span class="service-kicker service-kicker--amber">06 · Soberanía Local</span>
-            <h3 class="service-title">Servidores Locales Seguros &amp; Backups 3-2-1</h3>
-            <p class="service-desc">Implementación de nodos locales Debian/Docker para servicios internos, almacenamiento privado o automatización sin depender de nubes costosas.</p>
-            <ul class="service-list">
-              <li>Aislamiento LAN, acceso exclusivo vía VPN/Zero Trust</li>
+              <li>Aislamiento LAN física, acceso exclusivo por VPN / Tailscale</li>
               <li>Respaldos automatizados (disco local + copia externa + verificación)</li>
-              <li>Monitoreo de salud de discos (S.M.A.R.T.) y alertas de apagón</li>
+              <li>Monitoreo S.M.A.R.T., alertas por Telegram y contingencia warm-standby</li>
             </ul>
           </article>
         </div>
@@ -447,10 +424,10 @@ Flags: D - dynamic; A - active; S - static
           <article class="package-card package-card--highlight spotlight-card">
             <span class="package-badge">Más Solicitado</span>
             <h3 class="package-name">Arquitectura Completa MikroTik</h3>
-            <p class="package-ideal">Diseño e implementación limpia para oficinas, clínicas, comercios y bodegas con 2 o más ISP y varias áreas.</p>
+            <p class="package-ideal">Configuración limpia desde cero o reestructuración completa para oficinas, clínicas, comercios y bodegas.</p>
             <ul class="package-list">
-              <li>Failover + Balanceo PCC + protección de tráfico crítico</li>
-              <li>Segmentación por VLANs + WireGuard/IPsec + Hardening total</li>
+              <li>Failover Dual-WAN recursivo real + limpieza de sesiones</li>
+              <li>VPN segura (WireGuard / Tailscale) + endurecimiento de accesos</li>
               <li>Prueba en sitio/remota + ficha técnica de topología</li>
             </ul>
             <div class="package-cta">
@@ -526,7 +503,7 @@ Flags: D - dynamic; A - active; S - static
 
             <div class="diag-output">
               <div class="diag-preview-box">
-                <div class="diag-preview-head"><span>RESUMEN_MIKROTIK.txt</span><span>+57 322 963 7406</span></div>
+                <div class="diag-preview-head"><span>Resumen técnico · Redes MikroTik</span><span>+57 322 963 7406</span></div>
                 <pre class="diag-preview-text" id="diagPreviewText"></pre>
               </div>
               <div class="diag-actions">
@@ -606,7 +583,7 @@ Flags: D - dynamic; A - active; S - static
           <h3 class="footer-heading">Especialidades</h3>
           <ul class="footer-links">
             <li><a href="/redes-mikrotik/">Redes MikroTik &amp; Failover</a></li>
-            <li><a href="/electronica-pcb/">Electrónica, PCB &amp; RF</a></li>
+            <li><a href="/electronica-pcb/">Electrónica, PCBs &amp; Firmware</a></li>
             <li><a href="/automatizacion-plc/">Automatización &amp; PLCs</a></li>
             <li><a href="/manuales/">Manuales &amp; Levantamiento</a></li>
           </ul>
@@ -621,12 +598,11 @@ Flags: D - dynamic; A - active; S - static
           </ul>
         </div>
         <div>
-          <h3 class="footer-heading">Legal &amp; Seguridad</h3>
+          <h3 class="footer-heading">Legal &amp; Privacidad</h3>
           <ul class="footer-links">
             <li><a href="/privacidad/">Política de Privacidad</a></li>
             <li><a href="/terminos/">Términos y Condiciones</a></li>
             <li><a href="https://ingversia.com/privacidad.html" target="_blank" rel="noopener noreferrer">Política General Ingversia</a></li>
-            <li><a href="mailto:seguridad@ingversia.com">seguridad@ingversia.com</a></li>
           </ul>
         </div>
       </div>
@@ -637,6 +613,6 @@ Flags: D - dynamic; A - active; S - static
     </div>
   </footer>
 
-  <script src="/js/main.js?v=2.0" defer></script>
+  <script src="/js/main.js?v=3.0" defer></script>
 </body>
 </html>

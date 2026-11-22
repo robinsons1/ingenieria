@@ -83,7 +83,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
 
-  <link rel="stylesheet" href="/css/styles.css?v=3.0">
+  <link rel="stylesheet" href="/css/styles.css?v=4.0">
 </head>
 <body id="top">
 
@@ -316,12 +316,37 @@
                 <div class="terminal-dots" aria-hidden="true"><span></span><span></span><span></span></div>
                 <span>Ejemplo de matriz de diagnóstico</span>
               </div>
-              <pre class="terminal-body"><span class="term-cmd">| SÍNTOMA              | CAUSA PROBABLE        | VERIFICACIÓN / ACCIÓN        |</span>
-|----------------------|-----------------------|------------------------------|
-| Tablero sin mando    | Paro emergencia / F2  | Medir 24VDC en bornera X1:4  |
-| Sensor 4-20mA en 0   | Lazo abierto / fusible| Revisar canal AI2 y borna +  |
-| Sin acceso sede B    | Túnel VPN caído WAN1  | Confirmar ruta WAN2 activa   |
-<span class="term-ok">| Historico detenido   | Disco lleno / servicio| Ejecutar checklist Sec. 4.2  |</span></pre>
+              <table class="terminal-matrix">
+                <thead>
+                  <tr>
+                    <th scope="col">Síntoma</th>
+                    <th scope="col">Causa probable</th>
+                    <th scope="col">Verificación / Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Tablero sin mando</td>
+                    <td>Paro emergencia / F2</td>
+                    <td>Medir 24 VDC en bornera X1:4</td>
+                  </tr>
+                  <tr>
+                    <td>Sensor 4–20 mA en 0</td>
+                    <td>Lazo abierto / fusible</td>
+                    <td>Revisar canal AI2 y borna +</td>
+                  </tr>
+                  <tr>
+                    <td>Sin acceso sede B</td>
+                    <td>Túnel VPN caído WAN1</td>
+                    <td>Confirmar ruta WAN2 activa</td>
+                  </tr>
+                  <tr>
+                    <td>Histórico detenido</td>
+                    <td>Disco lleno / servicio</td>
+                    <td>Ejecutar checklist Sec. 4.2</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

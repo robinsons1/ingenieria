@@ -87,7 +87,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
 
-  <link rel="stylesheet" href="/css/styles.css?v=3.0">
+  <link rel="stylesheet" href="/css/styles.css?v=4.0">
 </head>
 <body id="top">
 
@@ -249,10 +249,10 @@
             <h2>Estándar de Entrega en Redes</h2>
             <ul class="metric-list">
               <li><span>Validación WAN</span><strong>Rutas recursivas a internet real</strong></li>
-              <li><span>Cierre del servicio</span><strong>Prueba física/remota de caída</strong></li>
-              <li><span>Seguridad RouterOS</span><strong>Endurecimiento de puertos y acceso</strong></li>
-              <li><span>Continuidad</span><strong>Backup .rsc + .backup cifrado</strong></li>
-              <li><span>Infraestructura local</span><strong>Debian/Docker + Tailscale + 3-2-1</strong></li>
+              <li><span>Cierre del servicio</span><strong>Prueba real de caída en vivo</strong></li>
+              <li><span>Seguridad RouterOS</span><strong>Cierre de puertos expuestos</strong></li>
+              <li><span>Respaldo técnico</span><strong>Backups .rsc + .backup cifrado</strong></li>
+              <li><span>Servidor local</span><strong>Debian/Docker + Tailscale + 3-2-1</strong></li>
               <li><span>Cobertura</span><strong>Bogotá presencial / Colombia remoto</strong></li>
             </ul>
           </aside>
@@ -378,20 +378,17 @@
             <div class="proof-terminal" aria-label="Ejemplo de verificación de failover recursivo en RouterOS">
               <div class="terminal-header">
                 <div class="terminal-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-                <span>[admin@MikroTik-Sede] &gt; /ip/route/print</span>
+                <span>MikroTik RouterOS · Failover en vivo</span>
               </div>
-              <pre class="terminal-body"><span class="term-cmd"># Verificación recursiva contra internet real</span>
-Flags: D - dynamic; A - active; S - static
- 0  As  dst-address=0.0.0.0/0 gateway=1.1.1.1
-        distance=1 check-gateway=ping <span class="term-ok">status=reachable</span>
- 1   s  dst-address=0.0.0.0/0 gateway=8.8.4.4
-        distance=2 check-gateway=ping <span class="term-warn">standby=ready</span>
+              <pre class="terminal-body"><span class="term-cmd"># Rutas recursivas contra internet real</span>
+0 As  0.0.0.0/0 -> 1.1.1.1 (ISP1) <span class="term-ok">reachable</span>
+1  s  0.0.0.0/0 -> 8.8.4.4 (ISP2) <span class="term-warn">standby</span>
 
-<span class="term-cmd"># Simulación de corte WAN1 (fibra cortada aguas arriba)</span>
-[14:22:08] <span class="term-warn">WARN</span>: ISP1 host 1.1.1.1 unreachable -> route deactivated
-[14:22:11] <span class="term-ok">OK</span>:   Traffic switched to ISP2 (3s failover)
-[14:22:12] <span class="term-ok">OK</span>:   WireGuard tunnel re-established via WAN2
-[14:22:12] <span class="term-ok">OK</span>:   Telegram alert dispatched to ops channel</pre>
+<span class="term-cmd"># Prueba de corte WAN1 (fibra desconectada)</span>
+[14:22:08] <span class="term-warn">WARN</span>  1.1.1.1 sin respuesta (WAN1)
+[14:22:11] <span class="term-ok">OK</span>    Tráfico activo por WAN2 (3s)
+[14:22:12] <span class="term-ok">OK</span>    Túnel WireGuard reconectado
+[14:22:12] <span class="term-ok">OK</span>    Alerta enviada a Telegram</pre>
             </div>
           </div>
         </div>

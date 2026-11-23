@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Redes MikroTik, Failover Dual-WAN Real, VPN y Servidores Locales | Ingeniería by Ingversia</title>
-  <meta name="description" content="Rescate y configuración profesional de MikroTik en Bogotá y Colombia: failover Dual-WAN recursivo real, VPN WireGuard y Tailscale, endurecimiento básico y servidores locales seguros con respaldo 3-2-1.">
+  <title>MikroTik y Failover Dual-WAN Real en Bogotá | Ingversia</title>
+  <meta name="description" content="Configuración y rescate MikroTik en Bogotá y Colombia: failover Dual-WAN recursivo probado en vivo, VPN WireGuard/Tailscale y servidores con backup 3-2-1.">
   <meta name="author" content="Ingeniería &amp; Automatización by Ingversia">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#06080e">
@@ -18,20 +18,20 @@
   <meta property="og:url" content="https://ingenieria.ingversia.com/redes-mikrotik/">
   <meta property="og:site_name" content="Ingeniería &amp; Automatización by Ingversia">
   <meta property="og:locale" content="es_CO">
-  <meta property="og:title" content="Redes MikroTik, Failover Dual-WAN Real y VPN Seguras | by Ingversia">
+  <meta property="og:title" content="MikroTik y Failover Dual-WAN Real en Bogotá | Ingversia">
   <meta property="og:description" content="¿Pagas doble internet y cuando cae el principal igual te quedas sin servicio? Implementamos failover recursivo real con prueba física de desconexión en vivo.">
-  <meta property="og:image" content="https://ingenieria.ingversia.com/assets/og-banner.jpg?v=3">
+  <meta property="og:image" content="https://ingenieria.ingversia.com/assets/og-mikrotik.jpg?v=4">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Redes MikroTik, Failover Dual-WAN Real y VPN | Ingeniería by Ingversia">
+  <meta name="twitter:title" content="MikroTik y Failover Dual-WAN Real en Bogotá | Ingversia">
   <meta name="twitter:description" content="Failover recursivo real, WireGuard/Tailscale, rescate MikroTik y servidores locales seguros con backups 3-2-1.">
-  <meta name="twitter:image" content="https://ingenieria.ingversia.com/assets/og-banner.jpg?v=3">
+  <meta name="twitter:image" content="https://ingenieria.ingversia.com/assets/og-mikrotik.jpg?v=4">
 
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=3">
-  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png?v=3">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=3">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=4">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png?v=4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=4">
 
   <script type="application/ld+json">
   {
@@ -81,13 +81,9 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
-
-  <link rel="stylesheet" href="/css/styles.css?v=4.0">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/plus-jakarta-sans-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/styles.css?v=5.0">
 </head>
 <body id="top">
 
@@ -100,7 +96,7 @@
   <header class="navbar" id="mainNavbar" role="banner">
     <div class="logo-container">
       <a href="/" class="navbar-logo-link" aria-label="Ingeniería &amp; Automatización by Ingversia — Inicio">
-        <img src="/assets/ingenieria_logo.svg" alt="Ingeniería &amp; Automatización by Ingversia" class="logo-img" width="141" height="32" fetchpriority="high">
+        <img src="/assets/ingenieria_logo.svg?v=4" alt="Ingeniería &amp; Automatización by Ingversia" class="logo-img" width="141" height="32" fetchpriority="high">
       </a>
 
       <div class="brand-affiliation-lockup">
@@ -187,7 +183,7 @@
     <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
       <div class="mobile-drawer-header">
         <div class="drawer-brand">
-          <img src="/assets/ingenieria_simbolo.svg" alt="" width="30" height="30" class="brand-logo">
+          <img src="/assets/ingenieria_simbolo.svg?v=4" alt="" width="30" height="30" class="brand-logo">
           <div class="drawer-brand-text">
             <span class="drawer-brand-title">Ingeniería</span>
             <span class="drawer-brand-sub">by <strong>Ingversia</strong></span>
@@ -229,7 +225,7 @@
           <div>
             <div class="hero-badge">
               <span class="badge-pulse" aria-hidden="true"></span>
-              <span>Especialidad #1 · Redes Empresariales &amp; RouterOS</span>
+              <span>Redes Empresariales · MikroTik RouterOS</span>
             </div>
             <h1 class="subpage-title">
               ¿Pagas dos proveedores de internet y <span class="text-gradient">cuando cae el principal</span> igual se detiene tu operación?
@@ -357,6 +353,17 @@
     <!-- ══ BLOQUE CLAVE DE CONFIANZA: PRUEBA EN VIVO ══ -->
     <section id="prueba-vivo" class="section reveal-on-scroll">
       <div class="container">
+        <div class="diagram-showcase">
+          <div class="diagram-bar">
+            <strong>Topología Dual-WAN Recursiva, WireGuard y Respaldo 3-2-1</strong>
+            <span class="diagram-tag">Arquitectura Visual</span>
+          </div>
+          <div class="diagram-frame">
+            <img src="/assets/diagrams/mikrotik-dual-wan.svg?v=4" alt="Arquitectura de Failover Dual-WAN recursivo MikroTik con WireGuard y servidor local" width="880" height="330" loading="lazy">
+          </div>
+          <p class="diagram-caption">Verificación externa hacia Internet real por cada enlace WAN para conmutar POS, túneles VPN y servidores sin intervención manual.</p>
+        </div>
+
         <div class="proof-panel">
           <div class="proof-grid">
             <div>
@@ -567,14 +574,14 @@
       <div class="footer-grid">
         <div>
           <div class="brand-link">
-            <img src="/assets/ingenieria_simbolo.svg" alt="" width="34" height="34" class="brand-logo">
+            <img src="/assets/ingenieria_simbolo.svg?v=4" alt="" width="34" height="34" class="brand-logo">
             <div class="brand-text">
               <span class="brand-title">Ingeniería &amp; Automatización</span>
               <span class="brand-endorse">by <strong>Ingversia</strong></span>
             </div>
           </div>
           <p class="footer-brand-desc">Redes empresariales MikroTik, failover Dual-WAN real, VPN e infraestructura local segura en Bogotá D.C., Colombia.</p>
-          <div class="footer-badges"><span class="footer-pill">Cero cookies publicitarias</span><span class="footer-pill">RUT Resp. 49 · No IVA</span></div>
+          <div class="footer-badges"><span class="footer-pill">Cero cookies publicitarias</span><span class="footer-pill">Prueba real en cada entrega</span></div>
         </div>
         <div>
           <h3 class="footer-heading">Especialidades</h3>
@@ -604,11 +611,11 @@
       </div>
       <div class="footer-bottom">
         <p>© 2026 Ingversia · División Ingeniería &amp; Automatización.</p>
-        <p>Bogotá D.C., Colombia</p>
+        <p>Bogotá D.C., Sabana y remoto en Colombia</p>
       </div>
     </div>
   </footer>
 
-  <script src="/js/main.js?v=3.0" defer></script>
+  <script src="/js/main.js?v=4.0" defer></script>
 </body>
 </html>

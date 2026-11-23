@@ -1,8 +1,10 @@
 services:
   ingenieria_web:
-    image: nginx:alpine
+    image: nginx:1.27-alpine
     container_name: ingenieria_web
     restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
     ports:
       # Binding estricto a Tailscale (aislamiento LAN física según estándar Ingversia)
       # Para pruebas locales en otra máquina, cambia temporalmente a "127.0.0.1:8087:80"

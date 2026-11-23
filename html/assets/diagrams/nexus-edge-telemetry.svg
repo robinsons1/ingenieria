@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="310" viewBox="0 0 880 310" role="img" aria-label="Arquitectura Edge Local-First inspirada en NEXUS: PLCs e instrumentación hacia base local, panel web, Telegram y PDF A4">
+  <defs>
+    <linearGradient id="bgNexus" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#060c18"/>
+      <stop offset="100%" stop-color="#091428"/>
+    </linearGradient>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="878" height="308" rx="16" fill="url(#bgNexus)" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="26" y="30" fill="#38bdf8" font-family="Consolas, monospace" font-size="11" font-weight="700" letter-spacing="0.8">ARQUITECTURA EDGE LOCAL-FIRST · DEMO REAL EN PRODUCCIÓN NEXUS</text>
+  <line x1="26" y1="40" x2="854" y2="40" stroke="#18243a" stroke-width="1"/>
+
+  <!-- Campo / Planta -->
+  <rect x="26" y="58" width="220" height="226" rx="13" fill="#0b1323" stroke="#1e3354" stroke-width="1.4"/>
+  <text x="42" y="84" fill="#38bdf8" font-family="Consolas, monospace" font-size="10.5" font-weight="700">CAMPO &amp; TABLERO</text>
+  <text x="42" y="106" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="15.5" font-weight="700">Planta &amp; Sensores</text>
+
+  <rect x="42" y="122" width="188" height="42" rx="8" fill="#070e1b" stroke="#1d3557" stroke-width="1"/>
+  <text x="54" y="141" fill="#e2e8f0" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="600">PLCs &amp; Variadores VFD</text>
+  <text x="54" y="156" fill="#94a3b8" font-family="Consolas, monospace" font-size="10">Lógica, relés y maniobra</text>
+
+  <rect x="42" y="172" width="188" height="42" rx="8" fill="#070e1b" stroke="#1d3557" stroke-width="1"/>
+  <text x="54" y="191" fill="#e2e8f0" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="600">Modbus RTU / TCP</text>
+  <text x="54" y="206" fill="#94a3b8" font-family="Consolas, monospace" font-size="10">Bus RS-485 · Ethernet local</text>
+
+  <rect x="42" y="222" width="188" height="42" rx="8" fill="#070e1b" stroke="#1d3557" stroke-width="1"/>
+  <text x="54" y="241" fill="#e2e8f0" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="600">Señales 4–20 mA / 0–10 V</text>
+  <text x="54" y="256" fill="#94a3b8" font-family="Consolas, monospace" font-size="10">PT100, nivel, energía, flujo</text>
+
+  <path d="M 246 170 H 302" fill="none" stroke="#38bdf8" stroke-width="2.2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Centro: Nodo Edge -->
+  <rect x="308" y="54" width="256" height="234" rx="14" fill="#091a2e" stroke="#06b6d4" stroke-width="1.8"/>
+  <rect x="308" y="54" width="256" height="4" rx="2" fill="#22d3ee"/>
+  <rect x="326" y="72" width="150" height="20" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+  <text x="401" y="85" fill="#6ee7b7" font-family="Consolas, monospace" font-size="10" font-weight="700" text-anchor="middle">AUTÓNOMO SIN INTERNET</text>
+  <text x="326" y="114" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="800">Nodo Edge Local-First</text>
+
+  <rect x="326" y="130" width="220" height="42" rx="8" fill="#06101f" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="338" y="149" fill="#22d3ee" font-family="Segoe UI, system-ui, sans-serif" font-size="12.5" font-weight="700">Adquisición FastAPI / Edge</text>
+  <text x="338" y="164" fill="#94a3b8" font-family="Consolas, monospace" font-size="10">Muestreo continuo + umbrales</text>
+
+  <rect x="326" y="180" width="220" height="42" rx="8" fill="#06101f" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="338" y="199" fill="#e2e8f0" font-family="Segoe UI, system-ui, sans-serif" font-size="12.5" font-weight="700">PostgreSQL / SQLite Local</text>
+  <text x="338" y="214" fill="#94a3b8" font-family="Consolas, monospace" font-size="10">Cero pérdida si cae la WAN</text>
+
+  <rect x="326" y="230" width="220" height="42" rx="8" fill="#06101f" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="338" y="249" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="12.5" font-weight="700">Sincronización y Respaldo</text>
+  <text x="338" y="264" fill="#94a3b8" font-family="Consolas, monospace" font-size="10">Cero licencias por sensor</text>
+
+  <!-- Conexiones Edge -> Salidas -->
+  <path d="M 564 116 C 592 116, 598 94, 622 94" fill="none" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <path d="M 564 176 L 622 176" fill="none" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <path d="M 564 236 C 592 236, 598 252, 622 252" fill="none" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Derecha: 3 salidas -->
+  <rect x="628" y="54" width="226" height="82" rx="12" fill="#0b1323" stroke="#1e3a5f" stroke-width="1.3"/>
+  <text x="644" y="76" fill="#22d3ee" font-family="Consolas, monospace" font-size="10" font-weight="700">HMI / TABLERO WEB</text>
+  <text x="644" y="94" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">Gráficas e Históricos</text>
+  <polyline points="644,122 674,116 704,120 734,104 764,112 794,100 832,108" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="628" y="146" width="226" height="64" rx="12" fill="#0b1323" stroke="#1e3a5f" stroke-width="1.3"/>
+  <text x="644" y="169" fill="#fbbf24" font-family="Consolas, monospace" font-size="10" font-weight="700">ALERTAS INMEDIATAS</text>
+  <text x="644" y="187" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">Bot Telegram Bidireccional</text>
+  <text x="644" y="202" fill="#94a3b8" font-family="Segoe UI, system-ui, sans-serif" font-size="11">Notificación y acuse de fallas</text>
+
+  <rect x="628" y="220" width="226" height="68" rx="12" fill="#0b1323" stroke="#065f46" stroke-width="1.3"/>
+  <text x="644" y="243" fill="#34d399" font-family="Consolas, monospace" font-size="10" font-weight="700">TRAZABILIDAD GERENCIAL</text>
+  <text x="644" y="261" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">Reportes PDF A4</text>
+  <text x="644" y="276" fill="#94a3b8" font-family="Segoe UI, system-ui, sans-serif" font-size="11">Consolidados listos para auditoría</text>
+</svg>
